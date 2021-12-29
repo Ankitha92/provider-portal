@@ -1,0 +1,374 @@
+/* Desktop Navigation */
+/* @media (min-width: 992px){
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    position: absolute;
+    top: 30px;
+    border:none !important;
+    box-shadow: 2px 0px 12px 0px rgb(0 0 0 / 10%);
+}
+} */
+
+.menu_bar{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: end;
+}
+
+
+#header.header-scrolled {
+    background: #dbe9e7;
+    height: 60px;
+    padding: 10px 0;
+  }
+  
+  .hoverme:hover{
+    color:red;
+  }
+  
+  .dropdown-item.active, .dropdown-item:active {
+  background-color:none !important;
+  }
+  
+  .nav-menu, .nav-menu * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .nav-menu > ul > li {
+    position: relative;
+    white-space: nowrap;
+    float: left;
+  }
+  
+  .nav-menu a {
+    display: block;
+    position: relative;
+    color: #0b6766;
+    padding: 10px 15px;
+    transition: 0.3s;
+    font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",sans-serif;
+  }
+  
+  .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
+    color: #007E68;
+    text-decoration: none;
+  }
+  
+  .nav-menu .drop-down ul {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: calc(100% - 11px);
+    z-index: 99999;
+    opacity: 0;
+    visibility: hidden;
+    padding: 10px 0;
+    background: #fff;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    transition: ease all 0.9s;
+  
+    transition: transform .9s,opacity .9s;
+      transition-property: transform, opacity;
+      transition-duration: 0.9s, 0.9s;
+      transition-timing-function: ease, ease;
+      transition-delay: 0s, 0s;
+  
+  
+  
+  
+  
+  
+  
+  }
+  
+  .nav-menu .drop-down:hover > ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+  }
+  
+  .nav-menu .drop-down li {
+    min-width: 180px;
+    position: relative;
+  }
+  
+  .nav-menu .drop-down ul a {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: none;
+    color: #25564f;
+  }
+  
+  .nav-menu .drop-down ul a:hover, .nav-menu .drop-down ul .active > a, .nav-menu .drop-down ul li:hover > a {
+    color: #70b9b0;
+  }
+  
+  .nav-menu .drop-down > a:after {
+    content: "\ea99";
+    font-family: IcoFont;
+    padding-left: 5px;
+  }
+  
+  .nav-menu .drop-down .drop-down ul {
+    top: 0;
+    left: calc(100% - 30px);
+  }
+  
+  .nav-menu .drop-down .drop-down:hover > ul {
+    opacity: 1;
+    top: 0;
+    left: 100%;
+  }
+  
+  .nav-menu .drop-down .drop-down > a {
+    padding-right: 35px;
+  }
+  
+  .nav-menu .drop-down .drop-down > a:after {
+    content: "\eaa0";
+    font-family: IcoFont;
+    position: absolute;
+    right: 15px;
+  }
+  
+  @media (max-width: 1366px) {
+    .nav-menu .drop-down .drop-down ul {
+      left: -90%;
+    }
+    .nav-menu .drop-down .drop-down:hover > ul {
+      left: -100%;
+    }
+    .nav-menu .drop-down .drop-down > a:after {
+      content: "\ea9d";
+    }
+  }
+  
+  
+  
+  
+  
+  #topbar {
+    background: #fff;
+    height: 40px;
+    font-size: 14px;
+    transition: all 0.5s;
+    border-bottom: 1px solid #c7c7c7;
+  }
+  
+  .dropdown-menu a{
+      margin-left: 0px !important;
+  }
+  
+  .navbar-expand-lg .navbar-nav .nav-link {
+      padding-right: 0;
+      padding-right: 0;
+      padding-top:20px;
+      padding-bottom: 15px;
+   
+  }
+  
+  .navbar-brand {
+      display: inline-block;
+       padding-top: .0rem; 
+      padding-bottom: .3125rem;
+      margin-right: 0rem;
+      font-size: 1.25rem;
+      line-height: inherit;
+      white-space: nowrap;
+  
+  
+  }
+  .nav-link {
+      color: #007E68 !important;
+      margin-left: 17px;
+      font-size: 14px;
+      text-decoration: none;
+  }
+  .top_header{
+      color: #333 !important;
+      margin-left: 17px;
+      font-size: 14px;
+      text-decoration: none;
+  }
+  
+  
+  .dropdown:hover>.dropdown-menu {
+      display: block;
+      cursor: pointer;
+  }
+  .dropdown>.dropdown-toggle:active {
+      pointer-events: none;   
+  }
+  .dropdown-menu>.dropdown-item{
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: none;
+      color: #25564f;
+  
+  }
+  
+  
+  .notific{
+    top: 13px;
+    color: #fff;
+    left: 22px;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    font-size: 9px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 11px;
+    border-radius: 50%;
+    background-color: #ff748e;
+  }
+  
+  .nav-item{
+    cursor: pointer;
+  }
+  
+  
+  
+  
+  /*--------------------------------------------------------------
+  # Navigation Menu
+  --------------------------------------------------------------*/
+  /* Desktop Navigation */
+  .nav-menu, .nav-menu * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    
+    .nav-menu > ul > li {
+      position: relative;
+      white-space: nowrap;
+      float: left;
+    }
+    
+    .nav-menu a {
+      display: block;
+      position: relative;
+      color: #0b6766;
+      padding: 10px 15px;
+      transition: 0.3s;
+      font-size: 14px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",sans-serif;
+    }
+    
+    .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
+      color: #007E68;
+      text-decoration: none;
+    }
+    
+    .nav-menu .drop-down ul {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: calc(100% - 11px);
+      z-index: 1021;
+      opacity: 0;
+      visibility: hidden;
+      padding: 10px 0;
+      background: #fff;
+      box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+      transition: ease all 0.3s;
+    }
+    
+    .nav-menu .drop-down:hover > ul {
+      opacity: 1;
+      top: 100%;
+      visibility: visible;
+    }
+    
+    .nav-menu .drop-down li {
+      min-width: 180px;
+      position: relative;
+    }
+    
+    .nav-menu .drop-down ul a {
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: none;
+      color: #25564f;
+    }
+    
+    .nav-menu .drop-down ul a:hover, .nav-menu .drop-down ul .active > a, .nav-menu .drop-down ul li:hover > a {
+      color: #70b9b0;
+    }
+    
+    .nav-menu .drop-down > a:after {
+      content: "\ea99";
+      font-family: IcoFont;
+      padding-left: 5px;
+    }
+    
+    .nav-menu .drop-down .drop-down ul {
+      top: 0;
+      left: calc(100% - 30px);
+    }
+    
+    .nav-menu .drop-down .drop-down:hover > ul {
+      opacity: 1;
+      top: 0;
+      left: 100%;
+    }
+    
+    .nav-menu .drop-down .drop-down > a {
+      padding-right: 35px;
+    }
+    
+    .nav-menu .drop-down .drop-down > a:after {
+      content: "\eaa0";
+      font-family: IcoFont;
+      position: absolute;
+      right: 15px;
+    }
+    
+    @media (max-width: 1366px) {
+      .nav-menu .drop-down .drop-down ul {
+        left: -90%;
+      }
+      .nav-menu .drop-down .drop-down:hover > ul {
+        left: -100%;
+      }
+      .nav-menu .drop-down .drop-down > a:after {
+        content: "\ea9d";
+      }
+    }
+    
+  
+    #header {
+      z-index: 199;
+    }
+    .top-nav{
+      position: relative;
+    }
+  
+    .top-dropdown-list {
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: none;
+      color: #25564f;
+  
+    }
+  
+  
+  
+  
+    /* This is used to hide the icon for setttings and replace the font */
+    .nav-menu .drop-down > a:after {
+      /* content: "\ea99";
+      font-family: IcoFont;
+      padding-left: 5px;
+      visibility: hidden; */
+      content: "\f0d7";
+      font: normal normal normal 12px/1 FontAwesome;
+  }

@@ -1,0 +1,203 @@
+<div class="page-overlay-wrapper" *ngIf="loading">
+    <div class="bee-spinner">
+    </div>
+</div>
+
+<section id="hero">
+    <div class="hero-container">
+        <h1>Eligibility Lookup</h1>
+        <h3>&nbsp;</h3>
+    </div>
+</section>
+
+<div class="box">
+    <div class="container">
+        <div>
+            <section>
+                <div class="container">
+                    <ul id="tabs" class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a id="tab-A" href="#pane-A" class="nav-link active" data-toggle="tab" role="tab">Member
+                                Search</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="tab-B" href="#pane-B" class="nav-link" data-toggle="tab" role="tab">Contact
+                                profile</a>
+                        </li>
+
+                    </ul>
+                    <div id="content" class="tab-content" role="tablist">
+                        <div id="pane-A" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-A">
+                            <div id="collapse-A" class="collapse show" data-parent="#content" role="tabpanel"
+                                aria-labelledby="heading-A">
+                                <div class="card-body">
+                                    <div class="container">
+                                        <div class='content'>
+                                            <form [formGroup]="popUp2FormGroup">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="form-group container">
+                                                            <label for="Search">Search<span class="text-danger"> *</span>
+                                                                    </label>
+                                                            <input type="text" placeholder="Enter Search"
+                                                                class="cs-tb"
+                                                                formControlName="Search" name="Search" readonly>
+                                                            <div *ngIf="(popUp2FormGroup.controls.Search.value == '') && submittedthree"
+                                                                class="invalid-feedback d-block">
+                                                                Search is Required
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="w-100"></div> -->
+                                                    <div class="col-12 ">
+                                                        <div class="form-group container">
+                                                            <label for="memberid">Member ID <span
+                                                                    class="text-danger">*</span></label>
+                                                            <input type="text" placeholder="Enter Member ID"
+                                                                class="cs-tb"
+                                                                formControlName="memberid" name="memberid">
+                                                            <div *ngIf="(popUp2FormGroup.controls.memberid.value == '') && submittedthree"
+                                                                class="invalid-feedback d-block">
+                                                                Member ID is Required
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-center mt-1 ">
+                                                    <button type="button" (click)="cancel()"
+                                                        class="btn btn-primary ml-2 p-3">Cancel</button>
+                                                    <button type="submit" class="btn btn-primary ml-2 p-3"
+                                                        id="closeModal" (click)="popup2()">Search</button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="pane-B" class="card tab-pane fade show" role="tabpanel" aria-labelledby="tab-B">
+                            <div id="collapse-B" class="collapse show" data-parent="#content" role="tabpanel"
+                                aria-labelledby="heading-B">
+                                <div class="card-body">
+                                    <div class="container">
+                                        <div class='content'>
+                                            <form [formGroup]="firstFormGroup" class="mybox">
+                                                <div class="row mt-6">
+                                                    <div class="col-lg-12 col-md-12">
+                                                        <div class="form-group container">
+                                                            <label for="Firstname">First Name<span
+                                                                    class="text-danger">*</span></label>
+                                                            <input type="text" formControlName="Firstname"
+                                                                placeholder="Enter Firstname" [class.invalid]="(!firstFormGroup.controls.Firstname.valid ) 
+                                                            && submittedone" class="cs-tb"
+                                                                name="Firstname">
+                                                            <div *ngIf="(firstFormGroup.controls.Firstname.value == '') && submittedone"
+                                                                class="invalid-feedback d-block">
+                                                                First Name is Required
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12">
+                                                        <div class="form-group container">
+                                                            <label for="Lastname">Last Name<span
+                                                                class="text-danger">*</span></label>
+                                                            <input type="text" formControlName="Lastname"
+                                                                placeholder="Enter Lastname" [class.invalid]="(!firstFormGroup.controls.Lastname.valid ) 
+                                                            && submittedone" class="cs-tb"
+                                                                name="Lastname">
+                                                            <div *ngIf="(firstFormGroup.controls.Lastname.value == '') && submittedone"
+                                                                class="invalid-feedback d-block">
+                                                                Last Name is Required
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12">
+                                                        <div class="form-group container">
+                                                            <label for="Dob"> Date of Birth <span
+                                                                class="text-danger">*</span> </label>
+                                                            <input type="date" formControlName="Dob"
+                                                                placeholder="Enter Date_of_Birth" [class.invalid]="(!firstFormGroup.controls.Dob.valid ) 
+                                                            && submittedone" class="cs-tb"
+                                                                name="Dob">
+                                                            <div *ngIf="(firstFormGroup.controls.Dob.value == '') && submittedone"
+                                                                class="invalid-feedback d-block">
+                                                                Date of Birth is Required
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 col-md-12">
+                                                        <div class="form-group container">
+                                                            <label for="Address">Address</label>
+                                                            <input type="text" formControlName="Address"
+                                                                placeholder="Enter Address" [class.invalid]="(!firstFormGroup.controls.Address.valid ) 
+                                                            && submittedone" class="cs-tb"
+                                                                name="Address">
+                                                            <div *ngIf="(firstFormGroup.controls.Address.value == '') && submittedone"
+                                                                class="invalid-feedback d-block">
+                                                                Address is Required
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="text-center mt-1 ">
+                                                    <button type="button" (click)="cancel2()"
+                                                        class="btn btn-primary ml-2 p-3">Cancel</button>
+                                                    <button type="submit" class="btn btn-primary ml-2 p-3"
+                                                        (click)="firstsubmit()">Search</button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <div class=" pl-3 pr-3 pt-3 text-center mt-1">
+                <table id="example" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
+                    <thead>
+                        <tr class="header_table">
+                            <th>Member Id</th>
+                            <th>Medhok Id</th>
+                            <th>First Name</th>
+                            <th>Last Name </th>
+                            <th>Date of Birth</th>
+                            <th>Address</th>
+                            <th>Effective date</th>
+                            <th>Terminate Date</th>
+                            <th>Enrollment Status</th>
+                            <th>CSH Plan</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngIf="result">
+                        <tr *ngFor="let filterdata of filterlist">
+                            <td><a class="link">{{filterdata?.Member_ID}}</a></td>
+                            <td>{{filterdata?.Medhok_ID}}</td>
+                            <td>{{filterdata?.First_Name}}</td>
+                            <td>{{filterdata?.Last_Name}}</td>
+                            <td>{{filterdata?.Date_Of_Birth}}</td>
+                            <td>{{filterdata?.Address}}</td>
+                            <td>{{filterdata?.Effective_Date}}</td>
+                            <td>{{filterdata?.Termination_Date}}</td>
+                            <td>{{filterdata?.Enrollment_Status}}</td>
+                            <td><a class="link">{{filterdata?.CSH_Plan}}</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div *ngIf="!result" class="text-center m-1 p-1">
+                    <p>No records found</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

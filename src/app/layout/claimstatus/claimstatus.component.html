@@ -1,0 +1,71 @@
+
+
+<div class="page-overlay-wrapper" *ngIf="loading">
+  <div class="bee-spinner">
+  </div>
+</div>
+<section id="hero">
+  <div class="hero-container">
+    <h1>Claims Status</h1>
+    <h3>&nbsp;</h3>
+  </div>
+</section>
+<section class="container-fluid">
+  <span>
+    <form [formGroup]="myform">
+      <div class="search-bar mt-1">
+        <label class="mt-3"> Claim Id</label>
+        <input type="text" name="claimid" formControlName="claimid" required="true" class="mb-2">
+        <div class="place">
+          <div *ngIf="(myform.controls.claimid.value == '') && submittedthree" class="invalid-feedback d-block">
+            Claim Id is Required
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary ml-2 p-3" id="closeModal" (click)="showTable()">Search</button>
+      </div>
+    </form>
+  </span>
+  <table class="table nt-3 mg-t table-bordered">
+    <thead class="table-header-container">
+      <tr>
+        <th scope="col">Claim Id</th>
+        <th scope="col">Claim Type</th>
+        <th scope="col">Action</th>
+        <th scope="col">Email Id</th>
+        <th scope="col">status</th>
+        <th scope="col">Service Date Begins</th>
+        <th scope="col">Service Date Ends</th>
+        <th scope="col">Insured</th>
+        <th scope="col">Subscriber Id</th>
+        <th scope="col">Subscriber Last Name</th>
+        <th scope="col">Subscriber First Name</th>
+        <th scope="col">Patient Account</th>
+        <th scope="col">Amount Billed</th>
+        <th scope="col">Adjudicated Price</th>
+        <th scope="col">Paid Amount</th>
+      </tr>
+    </thead>
+    <tbody class="table-header-container" *ngIf="show">
+      <tr *ngFor="let filterdata of filterlist">
+        <td>{{filterdata.Claim_Id}}</td>
+        <td>{{filterdata.Claim_Type}}</td>
+        <td>{{filterdata.Action}}</td>
+        <td>{{filterdata.Email_Id}}</td>
+        <td>{{filterdata.Status}}</td>
+        <td>{{filterdata.Service_Date_Begins}}</td>
+        <td>{{filterdata.Service_Date_Ends}}</td>
+        <td>{{filterdata.Insured}}</td>
+        <td>{{filterdata.Subscriber_Id}}</td>
+        <td>{{filterdata.Subscriber_First_Name}}</td>
+        <td>{{filterdata.Subscriber_Last_Name}}</td>
+        <td>{{filterdata.Patient_Account}}</td>
+        <td>{{filterdata.Amount_Billed}}</td>
+        <td>{{filterdata.Adjudicated_Price}}</td>
+        <td>{{filterdata.Paid_Amount}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="records text-center mt-3" *ngIf="!show">
+    <p>No records Found</p>
+  </div>
+</section>

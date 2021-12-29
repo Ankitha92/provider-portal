@@ -1,0 +1,45 @@
+.icon-box {
+    margin: 5px 0px 20px 0px;
+}
+a{
+    color: #276fba;
+}
+
+.count-box {
+    text-align: center;
+}
+
+.description {
+    text-align: center;
+}
+
+.count-box i {
+    font-size: 24px;
+    background: #276fba;
+    color: #fff;
+        padding: 25px;
+    border-radius: 50px;
+    width: 60px;
+    height: 60px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #276fba;//rgb(63, 34, 195);
+    background:  #276fba;//linear-gradient(0deg, rgb(34, 72, 195) 0%, rgb(120, 92, 245) 100%);
+}
+
+.mybox {
+    border: 1px solid #c7c7c7;
+    padding: 10px;
+    box-shadow: 2px 0px 12px 2px rgb(0 0 0 / 10%);
+    // height: 280px;
+    padding: 20px 30px;  
+  }
+
+  .mybox1 {
+    border: 1px solid #c7c7c7;
+    padding: 10px;
+    box-shadow: 2px 0px 12px 2px rgb(0 0 0 / 10%);
+    height: 180px;
+    padding: 20px 30px; 
+  }

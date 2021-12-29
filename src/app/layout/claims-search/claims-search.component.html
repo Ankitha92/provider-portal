@@ -1,0 +1,134 @@
+<section id="hero">
+    <div class="hero-container">
+        <h1>Claims Search</h1>
+        <h3>&nbsp;</h3>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class='content'>
+            <form [formGroup]="firstFormGroup" class="mybox">
+                <div class="row mt-6">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="form-group container">
+                            <label for="claimid">Claim ID<span
+                                    class="text-danger">*</span></label>
+                            <input type="text" formControlName="claimid"
+                                placeholder="Enter claimid" [class.invalid]="(!firstFormGroup.controls.claimid.valid ) 
+                            && submittedone" 
+                                name="claimid">
+                            <div *ngIf="(firstFormGroup.controls.claimid.value == '') && submittedone"
+                                class="invalid-feedback d-block">
+                                Claim ID is Required
+                            </div>
+                            <div *ngIf="firstFormGroup.controls.claimid?.errors?.pattern" class="invalid-feedback d-block">
+                                Characters only allow </div>
+                            <div *ngIf="(firstFormGroup.controls.claimid?.errors?.cannotContainSpace )"
+                                class="invalid-feedback d-block">claimid can not contain space.</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="form-group container">
+                            <label for="subscribid">Subscribe ID<span
+                                    class="text-danger">*</span></label>
+                            <input type="text" formControlName="subscribid"
+                                placeholder="Enter subscribe id" [class.invalid]="(!firstFormGroup.controls.subscribid.valid ) 
+                            && submittedone" class="cs-tb"
+                                name="subscribid">
+                            <div *ngIf="(firstFormGroup.controls.subscribid.value == '') && submittedone"
+                                class="invalid-feedback d-block">
+                                Subscrib ID is Required
+                            </div>
+                            <div *ngIf="firstFormGroup.controls.subscribid?.errors?.pattern" class="invalid-feedback d-block">
+                                Characters only allow </div>
+                            <div *ngIf="(firstFormGroup.controls.subscribid?.errors?.cannotContainSpace )"
+                                class="invalid-feedback d-block">subscribid can not contain space.</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="form-group container">
+                            <label for="firstname">First Name<span
+                                class="text-danger">*</span></label>
+                            <input type="text" formControlName="firstname"
+                                placeholder="Enter firstname" [class.invalid]="(!firstFormGroup.controls.firstname.valid ) 
+                            && submittedone" 
+                                name="firstname">
+                            <div *ngIf="(firstFormGroup.controls.firstname.value == '') && submittedone"
+                                class="invalid-feedback d-block">
+                                First Name is Required
+                            </div>
+                            <div *ngIf="firstFormGroup.controls.Firstname?.errors?.pattern" class="invalid-feedback d-block">
+                                Characters only allow </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="form-group container">
+                            <label for="lastname">Last Name<span
+                                class="text-danger">*</span></label>
+                            <input type="text" formControlName="lastname"
+                                placeholder="Enter lastname" [class.invalid]="(!firstFormGroup.controls.lastname.valid ) 
+                            && submittedone" class="cs-tb"
+                                name="lastname">
+                            <div *ngIf="(firstFormGroup.controls.lastname.value == '') && submittedone"
+                                class="invalid-feedback d-block">
+                                Last Name is Required
+                            </div>
+                            <div *ngIf="firstFormGroup.controls.lastname?.errors?.pattern" class="invalid-feedback d-block">
+                                Characters only allow </div>
+                                <div *ngIf="(firstFormGroup.controls.Lastname?.errors?.cannotContainSpace )"
+                                class="invalid-feedback d-block">Lastname can not contain space.</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="form-group container">
+                            <label for="Dob">Service Date Begins From<span
+                                class="text-danger">*</span></label>
+                            <input type="date" formControlName="ServiceDate"
+                                placeholder="Enter ServiceDate" [class.invalid]="(!firstFormGroup.controls.ServiceDate.valid ) 
+                            && submittedone" class="cs-tb"
+                                name="ServiceDate">
+                            <div *ngIf="(firstFormGroup.controls.ServiceDate.value == '') && submittedone"
+                                class="invalid-feedback d-block">
+                                ServiceDate is Required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="form-group container">
+                            <label for="Dob">Service Date Begins To<span
+                                class="text-danger">*</span></label>
+                            <input type="date" formControlName="ServiceDateTo"
+                                placeholder="Enter ServiceDateTo" [class.invalid]="(!firstFormGroup.controls.ServiceDateTo.valid ) 
+                            && submittedone" class="cs-tb"
+                                name="ServiceDateTo">
+                            <div *ngIf="(firstFormGroup.controls.ServiceDateTo.value == '') && submittedone"
+                                class="invalid-feedback d-block">
+                                ServiceDateTo is Required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="form-group container">
+                            <label for="ssn">NPI<span
+                                class="text-danger">*</span></label>
+                            <input type="text" formControlName="Npi"
+                                placeholder="Enter Npi" [class.invalid]="(!firstFormGroup.controls.Npi.valid ) 
+                            && submittedone" class="cs-tb"
+                                name="State">
+                            <div *ngIf="(firstFormGroup.controls.Npi.value == '') && submittedone"
+                                class="invalid-feedback d-block">
+                                Npi is Required
+                            </div>
+                    </div>
+                </div>
+                </div>
+                <div class="text-center mt-3 ">
+                    <button type="button" class="btn btn-primary ml-2 p-3"
+                        (click)="cancel2()">Reset</button>
+                    <button type="submit" class="btn btn-primary ml-2 p-3"
+                        (click)="firstsubmit()">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

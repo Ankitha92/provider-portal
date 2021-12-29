@@ -1,0 +1,159 @@
+<section id="hero">
+    <div class="hero-container">
+        <h1>Remittance Advice</h1>
+        <h3>&nbsp;</h3>
+    </div>
+</section>
+
+
+<div class="box">
+    <div class="container-fluid">
+        <div>
+            <section>
+                <div class="container">
+                    <ul id="tabs" class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a id="tab-A" href="#pane-A" class="nav-link active" data-toggle="tab" role="tab">Payment Information</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a id="tab-B" href="#pane-B" class="nav-link" data-toggle="tab" role="tab">Contact profile</a>
+                        </li> -->
+
+                    </ul>
+                    <div id="content" class="tab-content" role="tablist">
+                        <div id="pane-A" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-A">
+                            <div id="collapse-A" class="collapse show" data-parent="#content" role="tabpanel"
+                                aria-labelledby="heading-A">
+                                <div class="card-body">
+                                    <div class="container">
+                                        <div class='content'>
+                                            <form [formGroup]="popUp2FormGroup">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="form-group container">
+                                                            <div class="col-sm-12">
+                                                                    <label class="pricemedication_label" for="TPA">TPA<span
+                                                                        class="text-danger">*</span> :</label>
+                                                                    <select class="cs-tb"  id="sel1" placeholder="Select TPA" formControlName="TPA" name="TPA" >
+                                                                        <option value="" disabled selected hidden>Select TPA</option>
+                                                                        <option>All TPA</option>
+                                                                    </select>
+                                                                    <div *ngIf="(popUp2FormGroup.controls.TPA.value == '') && submittedthree"
+                                                                    class="invalid-feedback d-block">
+                                                                    TPA is Required
+                                                                </div>
+                                                            </div>
+                                                            
+
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="w-100"></div> -->
+                                                    <div class="col-12 ">
+                                                        <div class="form-group container">
+                                                            <div class="col-sm-12">
+                                                                    <label class="pricemedication_label" for="Searchtype">Search Type<span
+                                                                        class="text-danger">*</span> :</label>
+                                                                    <select class="cs-tb" id="sel2" formControlName="Searchtype" placeholder="SearchType">
+                                                                        <option value="" disabled selected hidden>Select Type</option>
+                                                                        <option>Claim Number</option>
+                                                                    </select>
+                                                            </div>
+                                                            <div *ngIf="(popUp2FormGroup.controls.Searchtype.value == '') && submittedthree"
+                                                                     class="invalid-feedback d-block">
+                                                                     Search Type is Required
+                                                                    </div>
+                                                            
+
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="w-100"></div> -->
+                                                    <div class="col-12">
+                                                        <div class="form-group container">
+                                                            <div class="col-sm-12">
+                                                            <label for="S_criteria">Search Criteria<span
+                                                                class="text-danger">*</span></label>
+                                                            <input type="text" placeholder="Enter Search criteria"
+                                                                formControlName="S_criteria"  class="cs-tb" name="S_criteria">
+                                                                <div *ngIf="(popUp2FormGroup.controls.S_criteria.value == '') && submittedthree"
+                                                                class="invalid-feedback d-block">
+                                                                Search Criteria is Required
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-center mt-1 ">
+                                                    <button type="button" class="btn btn-primary ml-2 p-3"
+                                                       (click)="cancel()" data-dismiss="modal" aria-label="Close">Cancel</button>
+                                                    <button type="submit" class="btn btn-primary ml-2 p-3"
+                                                        id="closeModal" (click)="popup2()">Search</button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <div class=" pl-3 pr-3 pt-3 text-center mt-1">
+                <table id="example" class="table table-striped table-bordered table-responsive dt-responsive nowrap" style="width:100%">
+                    <thead>
+                        <tr class="header_table">
+                            <th>Claim Number</th>
+                            <th>Insured</th>
+                            <th>Patient</th>
+                            <th>Certificate Number</th>
+                            <th>Group ID</th>
+                            <th>Provider Name</th>
+                            <th>Payee Name</th>
+                            <th>Amount Paid</th>
+                            <th>Check Number</th>
+                            <th>ECHO Draft</th>
+                            <th>EOB Prepared</th>
+                            <th>EOB</th>
+                            <th>EOD</th>
+                            <th>EPP</th>
+                            <th>Draft</th>
+                            <th>OB</th>
+                            <th>835</th>
+                            <th>Payment Details</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngIf="result">
+                        <tr>
+                            <td>123456</td>
+                            <td>Insured</td>
+                            <td>Jonh Schwendren</td>
+                            <td>2124445</td>
+                            <td>MA</td>
+                            <td>NINTEGRATED REHAB CONSULTANTS</td>
+                            <td>INTEGRTD REHAB CONS LLC</td>
+                            <td>$90.54</td>
+                            <td>8016</td>
+                            <td><a>1003629361</a></td>
+                            <td>-</td>
+                            <td>EOB</td>
+                            <td>EOD</td>
+                            <td><a>EPP</a></td>
+                            <td><a>Draft</a></td>
+                            <td>OD</td>
+                            <td><a>835</a></td>
+                            <td>Details</td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+                <div *ngIf="!result" class="text-center m-1 p-1">
+                    <p>No records found</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

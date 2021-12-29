@@ -1,0 +1,78 @@
+<section id="hero">
+    <div class="hero-container">
+        <h1>Medication Formulary</h1>
+        <h3>&nbsp;</h3>
+    </div>
+</section>
+
+<div class="container text-center">
+
+    <div class="row mt-4 mb-3">
+        <div class="col-lg-6 col-sm-12 icon-box">
+            <div class="mybox">
+                <div class="icon count-box"><i class="fa fa-calendar" aria-hidden="true"></i>
+                </div>
+                <h2 class="title mt-2"><a [routerLink]="['/idcards']" data-placement="top">2022 Plans</a></h2>
+                <p class="description">With the Annual Enrollment Period (AEP) underway, review our 2022 plan offerings.
+                    Our 2022 plans are also available to anyone requesting an effective date of 1/1/2022 and beyond.</p>
+                <button class="btn btn-primary btn-block mt-2 p-2" data-toggle="modal" data-target="#exampleModalCenterOne"
+                    (click)="year('2022')">
+                    Discover our 2022 Plans</button>
+            </div>
+        </div>
+        <div class="col-lg-6 col-sm-12 icon-box">
+            <div class="mybox">
+                <div class="icon count-box"><i class="fa fa-calendar" aria-hidden="true"></i>
+                </div>
+                <h2 class="title mt-2"><a [routerLink]="['/outcomebasedrewards']" style="cursor:pointer"
+                        data-toggle="tooltip" data-placement="top"> 2021 Plans </a></h2>
+                <p class="description">For those enrolling for an effective date of 11/1 or 12/1, review the 2021 plan
+                    options available to you. </p>
+                <button class="btn btn-primary btn-block mt-4 p-2" data-toggle="modal" data-target="#exampleModalCenterOne"
+                    (click)="year('2021')">View our 2021 Plans</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade " id="exampleModalCenterOne" tabindex="-1 " role="dialog "
+    aria-labelledby="exampleModalCenterTitle " aria-hidden="true ">
+    <div class="modal-dialog modal-dialog-centered modal-lg " role="dialog ">
+        <div class="modal-content ">
+            <div class="modal-header ">
+                <h2 class="modal-title m-0 " id="exampleModalCenterTitle "> Choose what you like to view </h2>
+                <button type="button" class="close" #closebuttonMember data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span> </button>
+            </div>
+            <div class="modal-body ">
+                <div class="row">
+                    <div class="col-12 icon-box">
+                        <div class="mybox1">
+                            <button class="btn btn-primary btn-block mt-2 p-2"  data-dismiss="modal" aria-label="Close" (click)="Plan('Medicare Advantage Plans')"> Medicare Advantages Plan
+                            </button>
+                            <br>
+                            <p class="description">Membership in Medicare Advantage plans continues to outpace Medicare
+                                Supplement plans. Enjoy all the security of Original Medicare plus important extra
+                                benefits, such as dental, vision and hearing all for an affordable or even $0 monthly
+                                premium in most areas.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 icon-box">
+                        <div class="mybox1">
+                            <button class="btn btn-primary btn-block mt-2 p-2" data-dismiss="modal" aria-label="Close"
+                                (click)="Plan('Medicare Part D Plans')"> Medicare Part D Plans </button>
+                            <br>
+                            <p class="description">Our stand-alone Medicare Part D (or prescription drug) plans are
+                                among the most affordable in the market. Adding a PDP to Original Medicare or your
+                                Medicare Supplement plan offers an added layer of protection against increasing
+                                healthcare costs.<br>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

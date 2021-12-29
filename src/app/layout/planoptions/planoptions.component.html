@@ -1,0 +1,73 @@
+<section id="hero">
+    <div class="hero-container">
+        <h1>Medicare Plans</h1>
+        <h3>&nbsp;</h3>
+    </div>
+</section>
+<section class="container">
+<div class="container mt-4">
+    <h1>Medicare plans for your need and budget
+    </h1>
+    <h4>Find your Medicare prescription drug coverage today.</h4>
+    <div class="container m-4">
+        <form [formGroup]="firstFormGroup">
+            <div class="row">
+                <div class="col-lg-12 ">
+                    <div class="form-group">
+                        <label class="pricemedication_label" for="planYear">Plan Year</label>
+                        <select class="cs-tb" formControlName="planYear" id="planYear" placeholder="Select" [class.invalid]="(firstFormGroup.controls.planYear.touched ) 
+                        && !firstFormGroup.controls.planYear.valid " class=" cs-tb" name="planYear">
+                            <option value="" disabled selected hidden>Select</option>
+                            <option>2021</option>
+                            <option>2022</option>
+                        </select>
+                        <div *ngIf="(firstFormGroup.controls.planYear.value == '') && firstFormGroup.controls.planYear.touched "
+                        class="invalid-feedback d-block">
+                        Plan is Required
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="pricemedication_label" for="plan">Plan</label>
+                            <select  formControlName="plan" id="plan" placeholder="Select" [class.invalid]="(!firstFormGroup.controls.plan.touched ) 
+                            && firstFormGroup.controls.plan.valid " class=" cs-tb" name="planYear">
+                                <option value="" disabled selected hidden>Select</option>
+                                <option>Clear Spring Health Value RX (PDP) (028) HI</option>
+                                <option>Clear Spring Health Value RX (PDP) (029) AK</option>
+                                <option>Clear Spring Health Primer RX (PDP) (030) NJ</option>
+                            </select>
+                            <div *ngIf="(firstFormGroup.controls.plan.value == '') && firstFormGroup.controls.plan.touched"
+                        class="invalid-feedback d-block">
+                        Plan is Required
+                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="pricemedication_label" for="specialAssistance">Do you Qualify for Special Assistance?</label>
+                        <select class="cs-tb" formControlName="specialAssistance" id="specialAssistance" placeholder="Select" [class.invalid]="(!firstFormGroup.controls.specialAssistance.touched ) 
+                        && firstFormGroup.controls.specialAssistance.valid" class=" cs-tb" name="planYear">
+                            <option value="" disabled selected hidden>Select</option>
+                            <option>No</option>
+                            <option>Yes</option>
+                            <option>I do not Know</option>
+                        </select>
+                        <div *ngIf="(firstFormGroup.controls.specialAssistance.value == '') && firstFormGroup.controls.specialAssistance.touched"
+                        class="invalid-feedback d-block">
+                        Special Assistance is Required
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-container float-right">
+                <button type="button" class="btn btn-primary ml-2 p-2" *ngIf='firstFormGroup.valid' [routerLink]="['/viewdetails']">View Details</button>
+            </div>
+        </form>
+    </div>
+</div>
+</section>

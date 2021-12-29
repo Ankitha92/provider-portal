@@ -1,0 +1,322 @@
+<section id="hero">
+    <div class="hero-container">
+        <h1>Medicare Plans</h1>
+        <h3>&nbsp;</h3>
+    </div>
+</section>
+<section class="inner-page">
+    <div class="container">
+        <div class="section-title">
+            <h2>Clear Spring Health Value Rx (PDP) (029) AK
+            </h2>
+            <h4>Explore plan details to see if it's right for you.
+                Check medication prices, see what pharmacies are in-network, and
+                find out what medications are covered.</h4>
+            <p>Explore Plan Details</p>
+        </div>
+
+
+
+        <!-- <section id="pres" class="pres section-bg">
+            <div class="container aos-init aos-animate" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 wow bounceInUp aos-init aos-animate" data-aos="zoom-in"
+                        data-aos-delay="100">
+                        <div class="box">
+                            <div class="icon" style="background: #fceef3;"><i class="fa fa-bed" aria-hidden="true"
+                                    style="color: #ff689b;"></i></div>
+                            <h4 class="title">Price Medications
+                            </h4>
+                            <p class="description">Find the cost of any medication avilable through your benefit plan.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="box">
+                            <div class="icon" style="background: #fff0da;"><i class="fa fa-plus-square"
+                                    aria-hidden="true" style="color: #e98e06;"></i></div>
+                            <h4 class="title"><a [routerLink]="['/mycoverage/findapharmacy']">Find a Pharmacy</a></h4>
+                            <p class="description">Use your city Zip code to find participating pharmacies in your area.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section> -->
+
+
+        <div class="box">
+            <div class="container">
+                <div>
+                    <section>
+                        <div class="container">
+                            <ul id="tabs" class="nav nav-tabs" role="tablist">
+                                <li class="nav-item">
+                                    <a id="tab-A" href="#pane-A" class="nav-link active" data-toggle="tab" role="tab">
+                                        Price Medications
+                                    </a>
+
+                                </li>
+                                <li class="nav-item">
+                                    <a id="tab-B" href="#pane-B" class="nav-link" data-toggle="tab" role="tab">
+                                        Find Pharmacy</a>
+                                </li>
+
+                            </ul>
+                            <div id="content" class="tab-content" role="tablist">
+                                <div id="pane-A" class="card tab-pane fade show active" role="tabpanel"
+                                    aria-labelledby="tab-A">
+                                    <div id="collapse-A" class="collapse show" data-parent="#content" role="tabpanel"
+                                        aria-labelledby="heading-A">
+                                        <div class="card-body">
+                                            <div class="container">
+                                                <section id="pres" class="pres section-bg">
+                                                    <div class="container aos-init aos-animate" data-aos="fade-up">
+                                                        <!-- <div class="row"> -->
+                                                        <div class=" wow bounceInUp aos-init aos-animate"
+                                                            data-aos="zoom-in" data-aos-delay="100">
+                                                            <div class="box">
+                                                                <div class="icon" style="background: #fceef3;"><i
+                                                                        class="fa fa-bed" aria-hidden="true"
+                                                                        style="color: #ff689b;"></i></div>
+                                                                <h4 class="title">Price Medications
+                                                                </h4>
+                                                                <h2>Search by drug name</h2>
+                                                                <label
+                                                                    style="display: flex;text-align: left; font-size: 0.9rem;">State
+                                                                    of residence: <span>Virginia</span></label><br>
+                                                                <label
+                                                                    style="display: flex;text-align: left; font-size: 0.9rem;">Income
+                                                                    and resource status: &nbsp;<span> Standard</span><a
+                                                                        href=""> Change Status</a></label><br>
+                                                                <label
+                                                                    style="display: flex;text-align: left; font-size: 1rem;">Select
+                                                                    a retail Pharmacy</label><br>
+                                                                <p>You may <span><a href=""> select a
+                                                                            Pharmacy</a></span> for drug pricing. If you
+                                                                    don not need select a Pharmacy,
+                                                                    we'll give you pricing from a Pharmacy in your
+                                                                    network</p>
+                                                                <div class="row">
+                                                                    <div class="col-md-12 col-lg-9 wow bounceInUp aos-init aos-animate"
+                                                                        data-aos="zoom-in" data-aos-delay="100">
+                                                                        <input type="text" id="form12"
+                                                                            class="cs-tb"
+                                                                            [(ngModel)]="filterName" />
+                                                                    </div>
+                                                                    <button type="submit"
+                                                                        class="btn btn-primary ml-2 p2"
+                                                                        (click)="clear()">Clear</button>
+                                                                    <button type="submit"
+                                                                        class="btn btn-primary ml-2"
+                                                                        (click)="Search()">Search</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class=" pl-3 pr-3 pt-1 text-center">
+                                                        <div *ngIf="isResult">
+                                                            <h3 style="font-weight: bold;">
+                                                                Drug strength
+                                                            </h3>
+                                                            <label>Select the drug name below to choose the drug
+                                                                strength and form you want to price.</label>
+                                                            <table id="example"
+                                                                class="table table-striped table-bordered dt-responsive nowrap"
+                                                                style="width:100%">
+                                                                <thead>
+                                                                    <tr class="header_table">
+                                                                        <th>Name</th>
+                                                                        <th>Form</th>
+                                                                        <th>Strength</th>
+                                                                        <th>Brand/ Generic/ OTC</th>
+                                                                        <th>Generic Equivalent Available</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="form-check">
+                                                                                <input type="radio"
+                                                                                    class="form-check-input"
+                                                                                    id="materialChecked2"
+                                                                                    name="materialExample2" checked
+                                                                                    mdbInput>
+                                                                                <label class="form-check-label"
+                                                                                    for="materialChecked2">Medicane</label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>Each</td>
+                                                                        <td></td>
+                                                                        <td>Brand</td>
+                                                                        <td>No</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <button type="submit" class="btn btn-success ml-2 p-2"
+                                                                data-toggle="modal"
+                                                                data-target="#exampleModalCenterOne">Continue </button>
+                                                        </div>
+
+                                                        <div *ngIf="!isResult" class="text-center m-1 p-1">
+                                                            <p>No records found</p>
+                                                        </div>
+                                                    </div>
+                                                </section>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="pane-B" class="card tab-pane fade show" role="tabpanel"
+                                    aria-labelledby="tab-B">
+                                    <div id="collapse-B" class="collapse show" data-parent="#content" role="tabpanel"
+                                        aria-labelledby="heading-B">
+                                        <div class="card-body">
+                                           
+
+                                                        <div _ngcontent-niv-c65 class="container">
+                                                            <div _ngcontent-niv-c65 class="text-center pt-3">
+                                                                <div class="content">
+                                                                    <h1>Find a Network Pharmacy</h1>
+                                                                </div>
+                                                                <br/>
+                                                                <div class="text-center">
+                                                                    <img alt="Pharmacy Icon" src="assets/img/zip.png">
+                                                                </div>
+                                                                <br/><br/><br/>
+                                                                <div class="content">
+                                                                <div class="container">
+                                                                    <form [formGroup]="firstFormGroup">
+                                                                    <div class="row height d-flex justify-content-center align-items-center">
+                                                                        <div class="col-md-8">
+                                                                            <div class="search"> <i class="fa fa-search"></i> <input type="text" class="cs-tb" formControlName="zipcode" name="zipcode" placeholder="Have a question? Ask Now">
+                                                                                 <button class="btn btn-primary" (click)="firstSubmit()">Search</button> </div>
+                                                                                 <div *ngIf="(firstFormGroup.controls.zipcode.value == '') && submittedone"
+                                                                                    class="invalid-feedback d-block">
+                                                                                    Zip Code is Required
+                                                                                </div>
+                                                                            <div class="search-bar">
+                                                                                <a href="#" class="link-primary">Primary link</a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="SearchContainer__messageWrapper___cssmod1pLbz">
+                                                                            <div class="SearchContainer__iconWrapper___cssmod3l0xm">
+                                                                                <img src="assets/img/tick.png" alt>
+                                                                            </div>
+                                                                            <div>
+                                                                                Your search is currently filtered by preferred pharmacies, which can help you get the lowest price on medications.
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                                </div>
+                                                            </div> 
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+
+                                          
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade " id="exampleModalCenterOne" tabindex="-1 " role="dialog "
+    aria-labelledby="exampleModalCenterTitle " aria-hidden="true ">
+    <div class="modal-dialog modal-dialog-centered modal-lg " style="width: 80%;" role="dialog ">
+        <div class="modal-content ">
+            <div class="modal-header ">
+                <h2 *ngIf="!isNext" class="modal-title m-0 " id="exampleModalCenterTitle "> Quantity and days' supply </h2>
+                <h2 *ngIf="isNext" class="modal-title m-0 text-danger" id="exampleModalCenterTitle"><i class="fa fa-exclamation-triangle" ></i> Coverage Alter</h2>
+                <button type="button" class="close" #closebuttonMember data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span> </button>
+            </div>
+            <div class="modal-body " style="padding: 1rem 1rem 0rem 1rem;">
+                <div class="row" *ngIf="!isNext">
+                    <div class="col-12 icon-box">
+                        <p>You've selected Paradigm Reservoir 3 Ml (10 units).
+                            If you need prices for a different medicine or dose, choose a different medicine. To get the
+                            most accurate information, please pay careful attention when you tell us the amount of
+                            medicine you take and how often you take it.</p>
+                        <div class="mybox1" >
+                            <form>
+                                <div class="form-group row">
+                                    <label for="colFormLabelSm"
+                                        class="col-sm-3 col-form-label col-form-label-sm">Enter package quantity and frequency:</label>
+                                    <div class="col-sm-3">
+                                        <input type="Qty" class="form-control form-control-sm" id="colFormLabelSm"
+                                           >
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <select class="form-control form-control-sm" id="colFormLabelSm">
+                                            <option>Select</option>
+                                            <option>Per day</option>
+                                            <option>Per month</option>
+                                            <option>Per year</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="colFormLabelSm"
+                                    class="col-sm-3 col-form-label col-form-label-sm">Calculate pricing for home delivery:</label>
+                                <div class="col-sm-3">
+                                    <input type="Qty" class="form-control form-control-sm" id="colFormLabelSm"> 
+                                </div>
+                                <div class="col-sm-3">
+                                    <label for="colFormLabelSm"
+                                    class="col-sm-3 col-form-label col-form-label-sm">days'supply</label>
+                                </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="colFormLabelSm"
+                                    class="col-sm-3 col-form-label col-form-label-sm">Calculate pricing for retail:</label>
+                                <div class="col-sm-3">
+                                    <input type="Qty" class="form-control form-control-sm" id="colFormLabelSm"> 
+                                </div>
+                                <div class="col-sm-3">
+                                    <label for="colFormLabelSm"
+                                    class="col-sm-3 col-form-label col-form-label-sm">days'supply</label>
+                                </div>
+                                </div>
+
+                                <div class="row m-1 pb-1">
+                                    <button 
+                                        class="btn btn-success ml-2 p-2"
+                                        (click)="clear()">Clear</button>
+                                    <button type="submit"
+                                        class="btn btn-success ml-2 p-2"
+                                        (click)="next()">Continue</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row" *ngIf="isNext">
+                    <div class="col-12 icon-box">
+                        <div class="mybox1" >
+                            <p class="text-danger">You Searched for <b>Paradigm Reservoir 3 MI.</b> This drug is not covered by your prescription program. Continue pricing to learn how to request a formulary exception.</p>
+                        </div>
+                        <div class="row m-1 pb-1">
+                            <button 
+                                class="btn btn-success ml-2 p-2"
+                                (click)="clear()">Clear</button>
+                            <button type="submit"
+                                class="btn btn-success ml-2 p-2"
+                                (click)="close()">Continue</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,250 @@
+.chatbot {
+    display: none !important;
+}
+
+
+.cs-login-body {
+    background-color: #f7f9fb;
+    font-size: 14px;
+}
+
+.cs-login-page .brand {
+    width: 200px;
+    overflow: hidden;
+    margin: 40px auto;
+    margin-bottom: 0px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 10px;
+}
+
+.cs_card {
+    border: 1px solid #eaeaea !important;
+    box-shadow: 2px 0px 12px 2px rgb(0 0 0 / 10%);
+    background-color: #ffffff;
+    width: 450px;
+    height: 550px;
+}
+
+.cs-tb {
+    border: 1px solid #eaeaea !important;
+}
+
+.btn-primary,
+.btn-primary:active,
+.btn-primary:visited {
+    /* background-color: #8064A2 !important; */
+    border: none !important;
+    color: white;
+    //background-image: linear-gradient(-135deg,#808080 ,#4158d0);
+    background-image: linear-gradient(-135deg,#276fba ,#40a3e9);
+    
+}
+
+.btn-primary:hover {
+    /* background-color: #594671 !important; */
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    border: none !important;  
+    background-image: linear-gradient(-135deg,#40a3e9 ,#276fba);
+}
+
+a {
+    color: #276fba;
+    text-decoration: none;
+    background-color: transparent;
+}
+.btn-primary {
+    
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    -moz-transition: all .4s;
+    transition: all .4s;
+}
+.input {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666;
+    display: block;
+    width: 100%;
+    background: #e6e6e6;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0 30px 0 25px;
+    outline: none;
+    border: none;
+
+}
+.cs-login-page .brand img {
+    width: 100%;
+}
+
+.cs-login-page .card-wrapper {
+    width: 380px;
+    margin: 10px auto;
+}
+
+.cs-login-page .card {
+    border-color: transparent;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .05);
+}
+
+.cs-login-page .card.fat {
+    padding: 10px;
+}
+
+.cs-login-page .card .card-title {
+    margin-bottom: 30px;
+}
+
+.cs-login-page .form-control {
+    border-width: 2.3px;
+}
+
+.cs-login-page .form-group label {
+    width: 100%;
+}
+
+.cs-login-page .btn.btn-block {
+    padding: 12px 10px;
+}
+
+.cs-login-page .footer {
+    margin: 40px 0;
+    color: #888;
+    text-align: center;
+}
+
+@media screen and (max-width: 425px) {
+    .cs-login-page .card-wrapper {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .cs-login-page .card.fat {
+        padding: 0;
+    }
+    .cs-login-page .card.fat .card-body {
+        padding: 15px;
+    }
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none !important;
+    outline: 0px !important;
+}
+
+*:focus {
+    outline: none !important;
+    outline: 0px !important;
+}
+
+input {
+    outline: none !important;
+    outline: 0px !important;
+}
+
+input,
+input:focus {
+    outline: 0px !important;
+    -webkit-appearance: none;
+}
+
+.alert-danger {
+    color: #dc3545 !important;
+    background-color: white !important;
+    border-color: white !important;
+    padding: 0px !important;
+    font-weight: bold;
+}
+
+.invalid {
+    border: 1px solid red;
+}
+
+.reg-part {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.register {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #43aea0;
+}
+
+.register:active {
+    color: blue;
+}
+
+.login100-form {
+    width: 290px;
+}
+.limiter {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.container-login100 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+	background-image: linear-gradient(-135deg,#fff,#4158d0);
+	}
+	
+	.wrap-login100 {
+    width: 316px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    //padding: 177px 130px 33px 95px;
+}
+
+.loginpic img{
+    display: flex;
+    width: 250px;
+    border-style: none;
+    margin: 0 auto;
+}
+
+.login100-form {
+    width: 290px;
+}
+
+.background{
+    background-image:linear-gradient(-135deg,#4158d0,#fff);
+        margin: 0px;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+
+}
+

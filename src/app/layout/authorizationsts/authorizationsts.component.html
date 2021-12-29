@@ -1,0 +1,184 @@
+<div class="page-overlay-wrapper" *ngIf="loading">
+    <div class="bee-spinner">
+    </div>
+</div>
+
+<section id="hero">
+    <div class="hero-container">
+        <h1> Authorization Status </h1>
+        <h3>&nbsp;</h3>
+    </div>
+</section>
+
+<section class="container-fluid">
+    <span>
+        <form [formGroup]="popUp2FormGroup">
+            <div class="search-bar">
+                <label class="pd-top">Member id </label>
+                <input type="text" name="memberid" class="cs-tb" formControlName="memberid" required="true">
+                <div class="place">
+                    <div *ngIf="(popUp2FormGroup.controls.memberid.value == '') && submittedthree"
+                        class="invalid-feedback d-block">
+                        Member Id is Required
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary  ml-2 p-3" id="closeModal"
+                    (click)="popup2()">Search</button>
+            </div>
+        </form>
+    </span>
+    <div class=" pl-3 pr-3 pt-3 text-center mt-1">
+        <table id="example" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
+            <thead>
+                <tr class="header_table">
+                    <th>Member Id</th>
+                    <th>First Name</th>
+                    <th>Last Name </th>
+                    <th>Medicare</th>
+                    <th>Medicaid</th>
+                    <th>Date of Birth</th>
+                    <th>Alternate Id</th>
+                    <th>Effective date</th>
+                    <th>Terminate Date</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="result">
+                <tr *ngFor="let filterdata of filterlist" (click)="author()">
+                    <td>{{filterdata?.Member_ID}}</td>
+                    <td>{{filterdata?.First_Name}}</td>
+                    <td>{{filterdata?.Last_Name}}</td>
+                    <td>457676127</td>
+                    <td>457676127</td>
+                    <td>{{filterdata?.Date_Of_Birth}}</td>
+                    <td>{{filterdata?.Member_ID}}</td>
+                    <td>{{filterdata?.Effective_Date}}</td>
+                    <td>{{filterdata?.Termination_Date}}</td>
+                    <td>Gender</td>
+                 
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="!result" class="text-center m-1 p-1">
+            <p>No records found</p>
+        </div>
+    </div>
+</section>
+
+
+<section *ngIf="data">
+    <div class="container-fluid">
+        <ul id="tabs" class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a id="tab-A" href="#pane-A" class="nav-link active" data-toggle="tab" role="tab"> Prior Authorizations: Medical </a>
+            </li>
+            <li class="nav-item">
+                <a id="tab-B" href="#pane-B" class="nav-link" data-toggle="tab" role="tab"> Prior Authorizations: Pharmacy </a>
+            </li>                      
+        </ul>
+        <div id="content" class="tab-content" role="tablist">
+            <div id="pane-A" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-A">
+                <div id="collapse-A" class="collapse show" data-parent="#content" role="tabpanel"
+                    aria-labelledby="heading-A">
+                    <div class="card-body">
+                        <div class="container">
+                            <div class='content'>
+                                <div class=" pl-3 pr-3 pt-3 text-center mt-1">
+                                    <table id="example" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
+                                        <thead>
+                                            <tr class="header_table">
+                                                <th>Request Type</th>
+                                                <th>Reference #</th>
+                                                <th>Received Date </th>
+                                                <th>Next Review</th>
+                                                <th>Status</th>
+                                                <th>Status Reason</th>
+                                                <th>Line of Business</th>
+                                                <th>Actual Admit Date</th>
+                                                <th>Discharge</th>
+                                            
+                                            </tr>
+                                        </thead>
+                                        <tbody *ngIf="result">
+                                            <tr *ngFor="let filterdata of filterlist" (click)="author()">
+                                                <td>{{filterdata?.Member_ID}}</td>
+                                                <td>{{filterdata?.First_Name}}</td>
+                                                <td>{{filterdata?.Last_Name}}</td>
+                                                <td>457676127</td>
+                                                <td>457676127</td>
+                                                <td>{{filterdata?.Date_Of_Birth}}</td>
+                                                <td>{{filterdata?.Member_ID}}</td>
+                                                <td>{{filterdata?.Effective_Date}}</td>
+                                                <td>{{filterdata?.Termination_Date}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div *ngIf="!result" class="text-center m-1 p-1">
+                                        <p>No records found</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="pane-B" class="card tab-pane fade show" role="tabpanel" aria-labelledby="tab-B">
+                <div id="collapse-B" class="collapse show" data-parent="#content" role="tabpanel"
+                    aria-labelledby="heading-B">
+                    <div class="card-body">
+                        <div class="container">
+                            <div class='content'>
+                                <div class=" pl-3 pr-3 pt-3 text-center mt-1">
+                                    <table id="example" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
+                                        <thead>
+                                            <tr class="header_table">
+                                                <th>Request Type</th>
+                                                <th>Rx C</th>
+                                                <th>NDC</th>
+                                                <th>Drug Name</th>
+                                                <th>Drug Type</th>
+                                                <th>Task</th>
+                                                <th>Effective</th>
+                                                <th>Term</th>
+                                                <th>Received</th>
+                                                <th>Provider First</th>
+                                                <th>Provider Last</th>
+                                                <th>Pharmacy Name</th>
+                                                <th>Status Reason</th>
+                                                <th>Common</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody *ngIf="result">
+                                            <tr *ngFor="let filterdata of filterlist" (click)="author()">
+                                                <td>{{filterdata?.Member_ID}}</td>
+                                                <td>{{filterdata?.First_Name}}</td>
+                                                <td>{{filterdata?.Last_Name}}</td>
+                                                <td>457676127</td>
+                                                <td>457676127</td>
+                                                <td>{{filterdata?.Date_Of_Birth}}</td>
+                                                <td>{{filterdata?.Member_ID}}</td>
+                                                <td>{{filterdata?.Effective_Date}}</td>
+                                                <td>{{filterdata?.Termination_Date}}</td>
+                                                <td>Gender</td>
+                                                <td>457676127</td>
+                                                <td>457676127</td>
+                                                <td>457676127</td>
+                                                <td>457676127</td>
+                                             
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div *ngIf="!result" class="text-center m-1 p-1">
+                                        <p>No records found</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

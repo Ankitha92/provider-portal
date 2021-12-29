@@ -1,0 +1,80 @@
+<section id="hero">
+    <div class="hero-container">
+        <h1>Plan Comparison Result</h1>
+        <h3>&nbsp;</h3>
+    </div>
+</section>
+<!-- <div class="container-fluid">
+        <form>
+            <label> Enter the ZIP code to Search
+              <input type="text"  name="zipid" #zipid
+              class="form-control" required="true">
+            </label>
+         <br/><br/>  
+            <div class="center">
+             <button type="button" class="btn btn-success" (click)="showCard(zipid.value)">Find Plan & Search</button>
+            </div>
+          </form>
+    </div> -->
+<div _ngcontent-rmy-c66 class="container mt-3">
+    <div>
+        <!-- <h1 style="text-align: center;">Plan Comparison Result</h1> -->
+        <div>
+            <h1>Available Plans</h1>
+            <p>Displaying a result for:{{currentVal}}</p>
+            <p>Below are the 2022 Clear Spring Health Prescription Drug Plan(PDP) in your zip code</p>
+            <p>Select "Plan Details" for more information</p>
+        </div>
+        <div _ngcontent-rmy-c66 class="row mt-5">
+            <div _ngcontent-rmy-c66 class="carddata " *ngFor="let plandata of plan">
+                <div _ngcontent-rmy-c66 class="payment">
+                    <h2 class="text-center mt-3">{{plandata.heading}}</h2>
+                    <div class="card-body">
+                        <!-- <div class="row">
+                            <div class="column">
+                                <div class="card" style="width: 100%;">
+                                    <h5 style="text-align: center;">Premium</h5>
+                                    <div class="card">
+                                        <p style="text-align: center;">{{plandata.premium}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="card" style="width: 100%;">
+                                    <h5 style="text-align: center;">Deductable</h5>
+                                    <div class="card">
+                                        <p style="text-align: center;">{{plandata.deductable}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="text-center">
+                            <table id="example" class="table table-striped table-bordered dt-responsive nowrap"
+                                style="width:100%">
+                                <thead>
+                                    <tr class="header_table">
+                                        <th>Premium</th>
+                                        <th>Deductabled</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{plandata.premium}}</td>
+                                        <td>{{plandata.deductable}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="toRight">
+                            <button class="btn btn-primary button_pm">Plan Details</button>&nbsp;&nbsp;
+                            <button class="btn btn-primary button_pm">Enroll</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+        </div>
+        <br />
+        <br />
+    </div>
