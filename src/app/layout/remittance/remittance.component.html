@@ -34,10 +34,17 @@
                                                             <div class="col-sm-12">
                                                                     <label class="pricemedication_label" for="TPA">TPA<span
                                                                         class="text-danger">*</span> :</label>
-                                                                    <select class="cs-tb"  id="sel1" placeholder="Select TPA" formControlName="TPA" name="TPA" >
+                                                                    <!-- <select class="cs-tb"  id="sel1" placeholder="Select TPA" formControlName="TPA" name="TPA" >
                                                                         <option value="" disabled selected hidden>Select TPA</option>
-                                                                        <option>All TPA</option>
-                                                                    </select>
+                                                                        <option *ngFor="let elt of categoryTypes"
+                                                                        [ngValue]="elt.code">{{elt.value}}</option>
+                                                                    </select> -->
+                                                                    <ng-select2 [data]="categoryTypes"
+                                                                    name="TPA" formControlName="TPA" placeholder="Select TPA "
+                                                                     [(ngModel)]="value1"
+                                                                     [formControl]="formControl1"
+                                                                    >
+                                                                     </ng-select2>
                                                                     <div *ngIf="(popUp2FormGroup.controls.TPA.value == '') && submittedthree"
                                                                     class="invalid-feedback d-block">
                                                                     TPA is Required
@@ -53,10 +60,17 @@
                                                             <div class="col-sm-12">
                                                                     <label class="pricemedication_label" for="Searchtype">Search Type<span
                                                                         class="text-danger">*</span> :</label>
-                                                                    <select class="cs-tb" id="sel2" formControlName="Searchtype" placeholder="SearchType">
+                                                                    <!-- <select class="cs-tb" id="sel2" formControlName="Searchtype" placeholder="SearchType">
                                                                         <option value="" disabled selected hidden>Select Type</option>
-                                                                        <option>Claim Number</option>
-                                                                    </select>
+                                                                        <option *ngFor="let elt of categoryTypesTwo"
+                                                                        [ngValue]="elt.code">{{elt.value}}</option>
+                                                                    </select> -->
+                                                                    <ng-select2 [data]="categoryTypesTwo"
+                                                                    name="Searchtype" formControlName="Searchtype" placeholder="Select Searchtype "
+                                                                     [(ngModel)]="value2"
+                                                                     [formControl]="formControl2"
+                                                                    >
+                                                                     </ng-select2>
                                                             </div>
                                                             <div *ngIf="(popUp2FormGroup.controls.Searchtype.value == '') && submittedthree"
                                                                      class="invalid-feedback d-block">

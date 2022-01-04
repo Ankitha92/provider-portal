@@ -16,5 +16,9 @@ export class ApiservicesService {
   public post(url: string, data: any): Observable<any> {
     return this.http.post(this.API_URL + url,data).pipe(map(res => res));
   }
+  public getPrice(){
+    
+    return this.http.get('https://www.express-scripts.com/frontendservice/proxinator/1/member/v1/drugpricing/prelogin/oepc/drug/search?name=Lisin&context=oepc')
+  }
 
 }

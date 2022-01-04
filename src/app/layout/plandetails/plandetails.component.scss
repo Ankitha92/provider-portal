@@ -1,0 +1,170 @@
+
+.accordion_container {
+    width: 100%;
+  }
+  
+  .accordion_head {
+    background-color: #dbe9e7;
+    color: #777;
+    cursor: pointer;
+    font-family: arial;
+    font-size: 14px;
+    margin: 0 0 4px 0;
+    padding: 7px 11px;
+    font-weight: bold;
+  }
+  
+  .accordion_body {
+    background: #d8f9f5;
+  }
+  
+  .accordion_body p {
+    padding: 18px 10px;
+    margin: 0px;
+  }
+  
+  .plusminus {
+    float: right;
+  }  
+.accordion .card-header:after {
+    font-family: 'FontAwesome';  
+    content: "\f068";
+    float: right; 
+}
+.accordion .card-header.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\f067"; 
+}
+
+.table-vertical {
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+  }
+  /* Zebra striping */
+  .table-vertical > tbody > tr:nth-of-type(odd) {
+    background: #f9f9f9;
+  }
+  .table-vertical > thead > tr > th {
+    background: #fff;
+    color: #000;
+    font-weight: bold;
+  }
+  .table-vertical > tbody > tr > td,
+  .table-vertical > thead > tr > th {
+    padding: 6px;
+    border-top: 1px solid #ddd;
+    text-align: left;
+    vertical-align: middle;
+  }
+  
+  /* 
+  Max width before this PARTICULAR table gets nasty
+  This query will take effect for any screen smaller than 760px
+  and also iPads specifically.
+  */
+  @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+    /* Force table to not be like tables anymore */
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+      display: block;
+    }
+  
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .table-vertical thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+  
+    .table-vertical > thead > tr,
+    .table-vertical > tbody > tr {
+      border: 1px solid #ccc;
+    }
+  
+    .table-vertical > thead > tr > td,
+    .table-vertical > tbody > tr > td {
+      /* Behave  like a "row" */
+      border: none;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      padding-left: 50%;
+    }
+  
+    .table-vertical > tbody > tr > td:before {
+      /* Now like a table header */
+      position: absolute;
+      /* Top/left values mimic padding */
+      top: 6px;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+    }
+  
+    /*
+      Label the data
+      */
+    .table-vertical > tbody > tr > td:before {
+      content: attr(data-th);
+    }
+  }
+.bd-l{
+    border:1px solid #c2c2
+}
+.row_table{
+    margin: 5px  0px 10px  55px !important;
+    .row{
+        margin: 0px !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /*--------------------------------------------------------------
+# About Us
+--------------------------------------------------------------*/
+.about h3 {
+    font-weight: 400;
+    font-size: 26px;
+  }
+  
+  .about ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .about ul li {
+    padding-bottom: 10px;
+  }
+  
+  .about ul i {
+    font-size: 20px;
+    padding-right: 4px;
+    color: #70b9b0;
+  }
+  
+  .about p:last-child {
+    margin-bottom: 0;
+  }
+  li {
+    float: left;
+    // padding-left: 3rem;
+}

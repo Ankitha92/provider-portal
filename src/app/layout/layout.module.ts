@@ -21,19 +21,21 @@ import { PlancomparsionComponent } from './plancomparsion/plancomparsion.compone
 import { PlanoptionsComponent } from './planoptions/planoptions.component';
 import { ViewdetailsComponent } from './viewdetails/viewdetails.component';
 import { AuthorizationstsComponent } from './authorizationsts/authorizationsts.component';
+import { PlandetailsComponent } from './plandetails/plandetails.component';
+import { NgSelect2Module } from 'ng-select2';
 
 
 @NgModule({
     declarations: [
         HeaderComponent,
         FooterComponent,
-        LayoutComponent,EligibilitylookupComponent, ClaimsSearchComponent, RemittanceComponent, ClaimstatusComponent, MedicationformularyComponent, CoveragedrugComponent, MedicareDPlansComponent, PlandocumentComponent, PlancomparsionComponent, PlanoptionsComponent, ViewdetailsComponent, AuthorizationstsComponent
+        LayoutComponent,EligibilitylookupComponent, ClaimsSearchComponent, RemittanceComponent, ClaimstatusComponent, MedicationformularyComponent, CoveragedrugComponent, MedicareDPlansComponent, PlandocumentComponent, PlancomparsionComponent, PlanoptionsComponent, ViewdetailsComponent, AuthorizationstsComponent, PlandetailsComponent
         
     ],
     imports: [
         CommonModule,
         LayoutRoutingModule,HomeModule,
-        RouterModule, ReactiveFormsModule, FormsModule,
+        RouterModule, ReactiveFormsModule, FormsModule,NgSelect2Module
 
     ],
     exports: [

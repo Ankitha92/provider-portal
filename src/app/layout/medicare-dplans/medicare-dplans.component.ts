@@ -18,7 +18,7 @@ export class MedicareDPlansComponent implements OnInit {
   popUp2FormGroup!: FormGroup;
   constructor(public activateroute: ActivatedRoute, public api: ApiservicesService, public formBuilder: FormBuilder,public router:Router) {
     this.popUp2FormGroup = this.formBuilder.group({
-      claimid: ['', Validators.compose([Validators.required])]
+      zipcode: ['', Validators.compose([Validators.required])]
     });
     this.activateroute.params.subscribe(res => {
       console.log(res);
@@ -37,7 +37,8 @@ export class MedicareDPlansComponent implements OnInit {
   firstsubmit() {
     this.submittedthree = true;
     if(this.popUp2FormGroup.valid){
-      this.router.navigate(['/plancomparsion'])
+      //this.router.navigate(['/plancomparsion'])
+      this.router.navigate(['/plancomparsion', { "planname": this.planname, "zipcode": this.popUp2FormGroup.value.zipcode }]);
     }
   }
 

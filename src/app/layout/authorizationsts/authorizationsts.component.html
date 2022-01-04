@@ -41,20 +41,22 @@
                     <th>Effective date</th>
                     <th>Terminate Date</th>
                     <th>Gender</th>
+                    <th>Authorization Status</th>
                 </tr>
             </thead>
             <tbody *ngIf="result">
-                <tr *ngFor="let filterdata of filterlist" (click)="author()">
-                    <td>{{filterdata?.Member_ID}}</td>
+                <tr *ngFor="let filterdata of filterlist;let i=index">
+                    <td>{{filterdata?.Member_Id}}</td>
                     <td>{{filterdata?.First_Name}}</td>
                     <td>{{filterdata?.Last_Name}}</td>
                     <td>457676127</td>
                     <td>457676127</td>
                     <td>{{filterdata?.Date_Of_Birth}}</td>
-                    <td>{{filterdata?.Member_ID}}</td>
+                    <td>{{filterdata?.Alternate_Id}}</td>
                     <td>{{filterdata?.Effective_Date}}</td>
                     <td>{{filterdata?.Termination_Date}}</td>
                     <td>Gender</td>
+                    <th (click)="author(i)"><a class="link"> View Details</a></th>
                  
                 </tr>
             </tbody>
@@ -66,25 +68,28 @@
 </section>
 
 
-<section *ngIf="data">
+<div *ngIf="data" style="padding: 20px;">
     <div class="container-fluid">
         <ul id="tabs" class="nav nav-tabs" role="tablist">
             <li class="nav-item">
-                <a id="tab-A" href="#pane-A" class="nav-link active" data-toggle="tab" role="tab"> Prior Authorizations: Medical </a>
+                <a id="tab-A" href="#pane-A" class="nav-link active" data-toggle="tab" role="tab"> Prior Authorizations:
+                    Medical </a>
             </li>
             <li class="nav-item">
-                <a id="tab-B" href="#pane-B" class="nav-link" data-toggle="tab" role="tab"> Prior Authorizations: Pharmacy </a>
-            </li>                      
+                <a id="tab-B" href="#pane-B" class="nav-link" data-toggle="tab" role="tab"> Prior Authorizations:
+                    Pharmacy </a>
+            </li>
         </ul>
         <div id="content" class="tab-content" role="tablist">
             <div id="pane-A" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-A">
                 <div id="collapse-A" class="collapse show" data-parent="#content" role="tabpanel"
                     aria-labelledby="heading-A">
                     <div class="card-body">
-                        <div class="container">
+                        <div class="container-fluid">
                             <div class='content'>
                                 <div class=" pl-3 pr-3 pt-3 text-center mt-1">
-                                    <table id="example" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
+                                    <table id="example" class="table table-striped table-bordered dt-responsive nowrap"
+                                        style="width:100%">
                                         <thead>
                                             <tr class="header_table">
                                                 <th>Request Type</th>
@@ -96,20 +101,20 @@
                                                 <th>Line of Business</th>
                                                 <th>Actual Admit Date</th>
                                                 <th>Discharge</th>
-                                            
+
                                             </tr>
                                         </thead>
                                         <tbody *ngIf="result">
-                                            <tr *ngFor="let filterdata of filterlist" (click)="author()">
-                                                <td>{{filterdata?.Member_ID}}</td>
-                                                <td>{{filterdata?.First_Name}}</td>
-                                                <td>{{filterdata?.Last_Name}}</td>
-                                                <td>457676127</td>
-                                                <td>457676127</td>
-                                                <td>{{filterdata?.Date_Of_Birth}}</td>
-                                                <td>{{filterdata?.Member_ID}}</td>
-                                                <td>{{filterdata?.Effective_Date}}</td>
-                                                <td>{{filterdata?.Termination_Date}}</td>
+                                            <tr>
+                                                <td>{{authorMedical?.Request_Type}}</td>
+                                                <td>{{authorMedical?.Reference}}</td>
+                                                <td>{{authorMedical?.Received_Date}}</td>
+                                                <td>{{authorMedical?.Next_Review_Status}}</td>
+                                                <td>{{authorMedical?.Status}}</td>
+                                                <td>{{authorMedical?.Status_Reason}}</td>
+                                                <td>{{authorMedical?.Line_Of_Business}}</td>
+                                                <td>{{authorMedical?.Actual_Admit_Date}}</td>
+                                                <td>{{authorMedical?.Discharge}}</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -127,10 +132,11 @@
                 <div id="collapse-B" class="collapse show" data-parent="#content" role="tabpanel"
                     aria-labelledby="heading-B">
                     <div class="card-body">
-                        <div class="container">
+                        <div class="container-fluid">
                             <div class='content'>
                                 <div class=" pl-3 pr-3 pt-3 text-center mt-1">
-                                    <table id="example" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
+                                    <table id="example" class="table table-striped table-bordered dt-responsive nowrap"
+                                        style="width:100%">
                                         <thead>
                                             <tr class="header_table">
                                                 <th>Request Type</th>
@@ -150,22 +156,21 @@
                                             </tr>
                                         </thead>
                                         <tbody *ngIf="result">
-                                            <tr *ngFor="let filterdata of filterlist" (click)="author()">
-                                                <td>{{filterdata?.Member_ID}}</td>
-                                                <td>{{filterdata?.First_Name}}</td>
-                                                <td>{{filterdata?.Last_Name}}</td>
-                                                <td>457676127</td>
-                                                <td>457676127</td>
-                                                <td>{{filterdata?.Date_Of_Birth}}</td>
-                                                <td>{{filterdata?.Member_ID}}</td>
-                                                <td>{{filterdata?.Effective_Date}}</td>
-                                                <td>{{filterdata?.Termination_Date}}</td>
-                                                <td>Gender</td>
-                                                <td>457676127</td>
-                                                <td>457676127</td>
-                                                <td>457676127</td>
-                                                <td>457676127</td>
-                                             
+                                            <tr>
+                                                <td>{{authorPharmacy?.Request_Type}}</td>
+                                                <td>{{authorPharmacy?.RXC}}</td>
+                                                <td>{{authorPharmacy?.NDC}}</td>
+                                                <td>{{authorPharmacy?.Drug_Name}}</td>
+                                                <td>{{authorPharmacy?.Drug_Type}}</td>
+                                                <td>{{authorPharmacy?.Task}}</td>
+                                                <td>{{authorPharmacy?.Effective_Date}}</td>
+                                                <td>{{authorPharmacy?.Termination_Date}}</td>
+                                                <td>{{authorPharmacy?.Received}}</td>
+                                                <td>{{authorPharmacy?.Provider_First}}</td>
+                                                <td>{{authorPharmacy?.Provider_Last}}</td>
+                                                <td>{{authorPharmacy?.Pharmacy_Name}}</td>
+                                                <td>{{authorPharmacy?.Status_Reason}}</td>
+                                                <td>{{authorPharmacy?.Common}}</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -181,4 +186,4 @@
             </div>
         </div>
     </div>
-</section>
+</div>

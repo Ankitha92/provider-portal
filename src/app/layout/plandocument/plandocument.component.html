@@ -16,11 +16,17 @@
                     <div class="form-group">
                         <label class="pricemedication_label" for="sel1">Select Plan:</label>
                         <div class="select">
-                        <select class="cs-tb" formControlName="plan" name="plan" id="sel1" placeholder="Select Plan">
+                        <!-- <select class="cs-tb" formControlName="plan" name="plan" id="sel1" placeholder="Select Plan">
                             <option value="" disabled selected hidden>Select Plan</option>
                             <option>Clear Spring Health Value Rx (PDP)</option>
                             <option>Clear Spring Health Premier Rx (PDP)</option>
-                        </select>
+                        </select> -->
+                        <ng-select2 [data]="exampleData"
+                        [(ngModel)]="value"
+                        name="plan" formControlName="plan" placeholder="Select Plan"
+                        [formControl]="formControl"
+                        >
+            </ng-select2>
                     </div>
                         <div *ngIf="(popUp2FormGroup.controls.plan.value == '') && submittedthree"
                         class="invalid-feedback d-block">
@@ -31,14 +37,20 @@
                 <div class="col-sm-4">
                     <div class="form-group">
                         <label class="pricemedication_label" for="zipcode"> Select State:</label>
-                        <select class="cs-tb" formControlName="state" name="state" id="sel1" placeholder="Select State">
+                        <!-- <select class="cs-tb" formControlName="state" name="state" id="sel1" placeholder="Select State">
                             <option value="" disabled selected hidden>Select State</option>
                             <option>Alabama</option>
                             <option>Alaska</option>
                             <option>Arizona</option>
                             <option>Arkansas</option>
                             <option>California</option>
-                        </select>
+                        </select> -->
+                        <ng-select2 [data]="exampleData2"
+                        [(ngModel)]="value2"
+                        name="state" formControlName="state" placeholder="Select State"
+                        [formControl]="formControl2"
+                        >
+            </ng-select2>
                         <div *ngIf="(popUp2FormGroup.controls.state.value == '') && submittedthree"
                         class="invalid-feedback d-block">
                         State is Required
@@ -48,7 +60,7 @@
                 <div class="col-sm-4">
                     <div class="form-group">
                         <label class="pricemedication_label" for="zipcode"> Select Document:</label>
-                        <select class="cs-tb" formControlName="document" name="document" id="sel1" placeholder="Select State">
+                        <!-- <select class="cs-tb" formControlName="document" name="document" id="sel1" placeholder="Select State">
                             <option value="" disabled selected hidden>Select Document</option>
                             <option>
                                 CSH Value Rx (PDP) Pharmacy Directory
@@ -65,7 +77,13 @@
                             <option>
                                 Covered Drug List - Value RX
                             </option>
-                        </select>
+                        </select> -->
+                        <ng-select2 [data]="exampleData3"
+                        [(ngModel)]="value3"
+                        name="document" formControlName="document" placeholder="Select Document"
+                        [formControl]="formControl3"
+                        >
+            </ng-select2>
                         <div *ngIf="(popUp2FormGroup.controls.document.value == '') && submittedthree"
                         class="invalid-feedback d-block">
                         Document is Required
