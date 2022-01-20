@@ -1,134 +1,340 @@
+<div class="page-overlay-wrapper" *ngIf="loading">
+    <div class="bee-spinner">
+    </div>
+</div>
+
 <section id="hero">
     <div class="hero-container">
         <h1>Claims Search</h1>
         <h3>&nbsp;</h3>
     </div>
 </section>
-<section>
-    <div class="container">
-        <div class='content'>
-            <form [formGroup]="firstFormGroup" class="mybox">
-                <div class="row mt-6">
-                    <div class="col-lg-12 col-md-12">
-                        <div class="form-group container">
-                            <label for="claimid">Claim ID<span
-                                    class="text-danger">*</span></label>
-                            <input type="text" formControlName="claimid"
-                                placeholder="Enter claimid" [class.invalid]="(!firstFormGroup.controls.claimid.valid ) 
-                            && submittedone" 
-                                name="claimid">
-                            <div *ngIf="(firstFormGroup.controls.claimid.value == '') && submittedone"
-                                class="invalid-feedback d-block">
-                                Claim ID is Required
+
+<div class="box">
+    <div class="container-fluid">
+
+        <section>
+            <div class="container-fluid">
+                <ul id="tabs" class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a id="tab-A" href="#pane-A" class="nav-link active" data-toggle="tab" role="tab">Claim
+                            Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="tab-B" href="#pane-B" class="nav-link" data-toggle="tab" role="tab">Claim Status</a>
+                    </li>
+                </ul>
+                <div id="content" class="tab-content" role="tablist">
+                    <div id="pane-A" class="card tab-pane fade show active" role="tabpanel" aria-labelledby="tab-A">
+                        <div id="collapse-A" class="collapse show" data-parent="#content" role="tabpanel"
+                            aria-labelledby="heading-A">
+                            <div class="card-body">
+                                <div class="container-fluid">
+                                    <div class='content'>
+                                        <section>
+                                            <div class="container-fluid mt-6">
+                                                <div class='content'>
+                                                    <form [formGroup]="firstFormGroup" class="mybox">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="row mt-2">
+                                                                    <div class="col-lg-3 col-md-12">
+                                                                        <div class="form-group container">
+                                                                            <label for="claimid">Claim ID</label>
+                                                                            <input type="text" formControlName="claimid"
+                                                                                placeholder="Enter Claim Id"
+                                                                                [class.invalid]="(!firstFormGroup.controls.claimid.valid ) 
+                                                                            && submittedone"
+                                                                                class="simplebox form-control cs-tb"
+                                                                                name="claimid">
+                                                                            <!-- <div *ngIf="(firstFormGroup.controls.claimid.value == '') && submittedone"
+                                                                                class="invalid-feedback d-block">
+                                                                                Claim ID is Required
+                                                                            </div>
+                                                                            <div *ngIf="firstFormGroup.controls.claimid?.errors?.pattern"
+                                                                                class="invalid-feedback d-block">
+                                                                                Numbers and Special Characters only allow </div>
+                                                                            <div *ngIf="(firstFormGroup.controls.claimid?.errors?.cannotContainSpace )"
+                                                                                class="invalid-feedback d-block">claimid can not contain space.</div> -->
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-3 col-md-12">
+                                                                        <div class="form-group container">
+                                                                            <label for="subscribid">Subscribe ID</label>
+                                                                            <input type="text"
+                                                                                formControlName="subscribid"
+                                                                                placeholder="Enter Subscribe Id"
+                                                                                [class.invalid]="(!firstFormGroup.controls.subscribid.valid ) 
+                                                                            && submittedone"
+                                                                                class="simplebox form-control cs-tb"
+                                                                                name="subscribid">
+                                                                            <!-- <div *ngIf="(firstFormGroup.controls.subscribid.value == '') && submittedone"
+                                                                                class="invalid-feedback d-block">
+                                                                                Subscribe ID is Required
+                                                                            </div> -->
+                                                                            <!-- <div *ngIf="firstFormGroup.controls.subscribid?.errors?.pattern"
+                                                                                class="invalid-feedback d-block">
+                                                                                Characters only allow </div> -->
+                                                                            <!-- <div *ngIf="(firstFormGroup.controls.subscribid?.errors?.cannotContainSpace )"
+                                                                                class="invalid-feedback d-block">subscribid can not contain space.</div> -->
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-3 col-md-12">
+                                                                        <div class="form-group container">
+                                                                            <label for="firstname">First Name</label>
+                                                                            <input type="text"
+                                                                                formControlName="firstname"
+                                                                                placeholder="Enter Firstname"
+                                                                                [class.invalid]="(!firstFormGroup.controls.firstname.valid ) 
+                                                                            && submittedone"
+                                                                                class="simplebox form-control cs-tb"
+                                                                                name="firstname">
+                                                                            <!-- <div *ngIf="(firstFormGroup.controls.firstname.value == '') && submittedone"
+                                                                                class="invalid-feedback d-block">
+                                                                                First Name is Required
+                                                                            </div> -->
+                                                                            <div *ngIf="firstFormGroup.controls.firstname?.errors?.pattern"
+                                                                                class="invalid-feedback d-block">
+                                                                                Characters only allow </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-3 col-md-12">
+                                                                        <div class="form-group container">
+                                                                            <label for="lastname">Last Name</label>
+                                                                            <input type="text"
+                                                                                formControlName="lastname"
+                                                                                placeholder="Enter Lastname"
+                                                                                [class.invalid]="(!firstFormGroup.controls.lastname.valid ) 
+                                                                            && submittedone"
+                                                                                class="simplebox form-control cs-tb"
+                                                                                name="lastname">
+                                                                            <!-- <div *ngIf="(firstFormGroup.controls.lastname.value == '') && submittedone"
+                                                                                class="invalid-feedback d-block">
+                                                                                Last Name is Required
+                                                                            </div> -->
+                                                                            <div *ngIf="firstFormGroup.controls.lastname?.errors?.pattern"
+                                                                                class="invalid-feedback d-block">
+                                                                                Characters only allow </div>
+                                                                            <div *ngIf="(firstFormGroup.controls.Lastname?.errors?.cannotContainSpace )"
+                                                                                class="invalid-feedback d-block">
+                                                                                Lastname can not contain space.</div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </div>
+                                                                <div class="row mt-2">
+                                                                    <div class="col-lg-3 col-md-12">
+                                                                        <div class="form-group container">
+                                                                            <label for="ssn">NPI</label>
+                                                                            <input type="text" formControlName="Npi"
+                                                                                placeholder="Enter Npi" [class.invalid]="(!firstFormGroup.controls.Npi.valid ) 
+                                                                            && submittedone"
+                                                                                class="simplebox form-control cs-tb"
+                                                                                name="State">
+                                                                            <!-- <div *ngIf="(firstFormGroup.controls.Npi.value == '') && submittedone"
+                                                                                class="invalid-feedback d-block">
+                                                                                Npi is Required
+                                                                            </div> -->
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-3 col-md-12">
+                                                                        <div class="form-group container">
+                                                                            <label for="Dob">Date Of Birth</label>
+                                                                            <input type="date" formControlName="Dob"
+                                                                                placeholder="Enter Dob" [class.invalid]="(!firstFormGroup.controls.Dob.valid ) 
+                                                                        && submittedone"
+                                                                                class="simplebox form-control cs-tb"
+                                                                                name="Dob">
+                                                                            <!-- <div *ngIf="(firstFormGroup.controls.Dob.value == '') && submittedone"
+                                                                                class="invalid-feedback d-block">
+                                                                                Dob is Required
+                                                                            </div> -->
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-3 col-md-12">
+                                                                        <div class="form-group container">
+                                                                            <label for="Dob">Service Date Begins
+                                                                                From</label>
+                                                                            <input type="date"
+                                                                                formControlName="ServiceDate"
+                                                                                placeholder="Enter Service Date Begins From"
+                                                                                [class.invalid]="(!firstFormGroup.controls.ServiceDate.valid ) 
+                                                                            && submittedone"
+                                                                                class="simplebox form-control cs-tb"
+                                                                                name="ServiceDate">
+                                                                            <!-- <div *ngIf="(firstFormGroup.controls.ServiceDate.value == '') && submittedone"
+                                                                                class="invalid-feedback d-block">
+                                                                                Service Date From is Required
+                                                                            </div> -->
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-3 col-md-12">
+                                                                        <div class="form-group container">
+                                                                            <label for="Dob">Service Date Begins
+                                                                                To</label>
+                                                                            <input type="date"
+                                                                                formControlName="ServiceDateTo"
+                                                                                placeholder="Enter Service Date Begins To"
+                                                                                [class.invalid]="(!firstFormGroup.controls.ServiceDateTo.valid ) 
+                                                                            && submittedone"
+                                                                                class="simplebox form-control cs-tb"
+                                                                                name="ServiceDateTo">
+                                                                            <!-- <div *ngIf="(firstFormGroup.controls.ServiceDateTo.value == '') && submittedone"
+                                                                                class="invalid-feedback d-block">
+                                                                                Service Date To is Required
+                                                                            </div> -->
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mt-2">
+
+                                                                </div>
+                                                                <div class="btn-container">
+                                                                    <button type="button" class="btn btn-primary ml-2 p-3"
+                                                                        (click)="cancel2()">Reset</button>
+                                                                    <button type="submit"
+                                                                    class="btn btn-primary ml-2 p-3"
+                                                                        (click)="Claimsearch()">Search</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                            <div class="container-fluid mt-4">
+                                                <table
+                                                    class="table nt-3 mg-t  table-striped table-bordered table-responsive dt-responsive nowrap">
+                                                    <thead class="table-header-container">
+                                                        <tr>
+                                                            <th scope="col">Claim Id</th>
+                                                            <th scope="col">Claim Status</th>
+                                                            <th scope="col">Pay to Provider(Par)</th>
+                                                            <th scope="col">Pay To NPI</th>
+                                                            <th scope="col">Provider</th>
+                                                            <th scope="col">Plan</th>
+                                                            <th scope="col">Contract</th>
+                                                            <th scope="col">Frequency Code</th>
+                                                            <th scope="col">Amount Billed</th>
+                                                            <th scope="col">Paid Amount</th>
+                                                            <th scope="col">Contact Amount</th>
+                                                            <th scope="col">Receipt Date</th>
+                                                            <th scope="col">Clean Date</th>
+                                                            <th scope="col">Service Date Begins</th>
+                                                            <th scope="col">Service Date Ends</th>
+                                                            <th scope="col">Patient Account</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table-header-container" *ngIf="show">
+                                                        <tr *ngFor="let filterdata of filterlist">
+                                                            <td>{{filterdata.ClaimId}}</td>
+                                                            <td>{{filterdata.Claimstatus}</td>
+                                                            <td>{{filterdata.PayToProvider}}</td>
+                                                            <td>{{filterdata.PayToNPI}}</td>
+                                                            <td>{{filterdata.Provider}}</td>
+                                                            <td>{{filterdata.Plan}}</td>
+                                                            <td>{{filterdata.Contract}}</td>
+                                                            <td>{{filterdata.FrequencyCode}}</td>
+                                                            <td>{{filterdata.AmountBilled}}</td>
+                                                            <td>{{filterdata.PaidAmount}}</td>
+                                                            <td>{{filterdata.ContactAmount}}</td>
+                                                            <td>{{filterdata.ReceiptDate}}</td>
+                                                            <td>{{filterdata.CleanDate}}</td>
+                                                            <td>{{filterdata.ServiceDateBegins}}</td>
+                                                            <td>{{filterdata.ServiceDateEnds}}</td>
+                                                            <td>{{filterdata.PatientAmount}}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <div class="records text-center mt-3" *ngIf="!show">
+                                                    <p>No records Found</p>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
                             </div>
-                            <div *ngIf="firstFormGroup.controls.claimid?.errors?.pattern" class="invalid-feedback d-block">
-                                Characters only allow </div>
-                            <div *ngIf="(firstFormGroup.controls.claimid?.errors?.cannotContainSpace )"
-                                class="invalid-feedback d-block">claimid can not contain space.</div>
                         </div>
                     </div>
-                    <div class="col-lg-12 col-md-12">
-                        <div class="form-group container">
-                            <label for="subscribid">Subscribe ID<span
-                                    class="text-danger">*</span></label>
-                            <input type="text" formControlName="subscribid"
-                                placeholder="Enter subscribe id" [class.invalid]="(!firstFormGroup.controls.subscribid.valid ) 
-                            && submittedone" class="cs-tb"
-                                name="subscribid">
-                            <div *ngIf="(firstFormGroup.controls.subscribid.value == '') && submittedone"
-                                class="invalid-feedback d-block">
-                                Subscrib ID is Required
-                            </div>
-                            <div *ngIf="firstFormGroup.controls.subscribid?.errors?.pattern" class="invalid-feedback d-block">
-                                Characters only allow </div>
-                            <div *ngIf="(firstFormGroup.controls.subscribid?.errors?.cannotContainSpace )"
-                                class="invalid-feedback d-block">subscribid can not contain space.</div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-12">
-                        <div class="form-group container">
-                            <label for="firstname">First Name<span
-                                class="text-danger">*</span></label>
-                            <input type="text" formControlName="firstname"
-                                placeholder="Enter firstname" [class.invalid]="(!firstFormGroup.controls.firstname.valid ) 
-                            && submittedone" 
-                                name="firstname">
-                            <div *ngIf="(firstFormGroup.controls.firstname.value == '') && submittedone"
-                                class="invalid-feedback d-block">
-                                First Name is Required
-                            </div>
-                            <div *ngIf="firstFormGroup.controls.Firstname?.errors?.pattern" class="invalid-feedback d-block">
-                                Characters only allow </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-12">
-                        <div class="form-group container">
-                            <label for="lastname">Last Name<span
-                                class="text-danger">*</span></label>
-                            <input type="text" formControlName="lastname"
-                                placeholder="Enter lastname" [class.invalid]="(!firstFormGroup.controls.lastname.valid ) 
-                            && submittedone" class="cs-tb"
-                                name="lastname">
-                            <div *ngIf="(firstFormGroup.controls.lastname.value == '') && submittedone"
-                                class="invalid-feedback d-block">
-                                Last Name is Required
-                            </div>
-                            <div *ngIf="firstFormGroup.controls.lastname?.errors?.pattern" class="invalid-feedback d-block">
-                                Characters only allow </div>
-                                <div *ngIf="(firstFormGroup.controls.Lastname?.errors?.cannotContainSpace )"
-                                class="invalid-feedback d-block">Lastname can not contain space.</div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-12">
-                        <div class="form-group container">
-                            <label for="Dob">Service Date Begins From<span
-                                class="text-danger">*</span></label>
-                            <input type="date" formControlName="ServiceDate"
-                                placeholder="Enter ServiceDate" [class.invalid]="(!firstFormGroup.controls.ServiceDate.valid ) 
-                            && submittedone" class="cs-tb"
-                                name="ServiceDate">
-                            <div *ngIf="(firstFormGroup.controls.ServiceDate.value == '') && submittedone"
-                                class="invalid-feedback d-block">
-                                ServiceDate is Required
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-12">
-                        <div class="form-group container">
-                            <label for="Dob">Service Date Begins To<span
-                                class="text-danger">*</span></label>
-                            <input type="date" formControlName="ServiceDateTo"
-                                placeholder="Enter ServiceDateTo" [class.invalid]="(!firstFormGroup.controls.ServiceDateTo.valid ) 
-                            && submittedone" class="cs-tb"
-                                name="ServiceDateTo">
-                            <div *ngIf="(firstFormGroup.controls.ServiceDateTo.value == '') && submittedone"
-                                class="invalid-feedback d-block">
-                                ServiceDateTo is Required
+                    <div id="pane-B" class="card tab-pane fade show" role="tabpanel" aria-labelledby="tab-B">
+                        <div id="collapse-B" class="collapse show" data-parent="#content" role="tabpanel"
+                            aria-labelledby="heading-B">
+                            <div class="card-body">
+                                <div class="container-fluid">
+                                    <div class='content'>
+                                        <section class="container-fluid">
+                                            <span>
+                                            <form [formGroup]="myform">
+                                                    <div class="search-bar mt-1">
+                                                      <label class="mt-3"> Claim Id</label>
+                                                      <input type="text" name="claimid" formControlName="claimid" required="true" class="mb-2">
+                                                      <div class="place">
+                                                        <div *ngIf="(myform.controls.claimid.value == '') && submittedthree" class="invalid-feedback d-block">
+                                                          Claim Id is Required
+                                                        </div>
+                                                      </div>
+                                                      <button type="submit" class="btn btn-primary btn-size ml-2" id="closeModal" (click)=" Claimstatus()">Search</button>
+                                                    </div>
+                                                  </form>
+                                            </span>
+                                            <table class="table nt-3 mg-t table-bordered">
+                                                <thead class="table-header-container">
+                                                    <tr>
+                                                        <th scope="col">Claim Id</th>
+                                                        <th scope="col">Claim Type</th>
+                                                        <th scope="col">Action</th>
+                                                        <th scope="col">Email Id</th>
+                                                        <th scope="col">status</th>
+                                                        <th scope="col">Service Date Begins</th>
+                                                        <th scope="col">Service Date Ends</th>
+                                                        <th scope="col">Insured</th>
+                                                        <th scope="col">Subscriber Id</th>
+                                                        <th scope="col">Subscriber First Name</th>
+                                                        <th scope="col">Subscriber Last Name</th>
+                                                        <th scope="col">Patient Account</th>
+                                                        <th scope="col">Amount Billed</th>
+                                                        <th scope="col">Adjudicated Price</th>
+                                                        <th scope="col">Paid Amount</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="table-header-container" *ngIf="show">
+                                                    <tr *ngFor="let filterdata of filterlist">
+                                                        <td>{{filterdata.Claim_Id}}</td>
+                                                        <td>{{filterdata.Claim_Type}}</td>
+                                                        <td>{{filterdata.Action}}</td>
+                                                        <td>{{filterdata.Email_Id}}</td>
+                                                        <td>{{filterdata.Status}}</td>
+                                                        <td>{{filterdata.Service_Date_Begins}}</td>
+                                                        <td>{{filterdata.Service_Date_Ends}}</td>
+                                                        <td>{{filterdata.Insured}}</td>
+                                                        <td>{{filterdata.Subscriber_Id}}</td>
+                                                        <td>{{filterdata.Subscriber_First_Name}}</td>
+                                                        <td>{{filterdata.Subscriber_Last_Name}}</td>
+                                                        <td>{{filterdata.Patient_Account}}</td>
+                                                        <td>{{filterdata.Amount_Billed}}</td>
+                                                        <td>{{filterdata.Adjudicated_Price}}</td>
+                                                        <td>{{filterdata.Paid_Amount}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="records text-center mt-3" *ngIf="!show">
+                                                <p>No records Found</p>
+                                            </div>
+                                        </section>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-12 col-md-12">
-                        <div class="form-group container">
-                            <label for="ssn">NPI<span
-                                class="text-danger">*</span></label>
-                            <input type="text" formControlName="Npi"
-                                placeholder="Enter Npi" [class.invalid]="(!firstFormGroup.controls.Npi.valid ) 
-                            && submittedone" class="cs-tb"
-                                name="State">
-                            <div *ngIf="(firstFormGroup.controls.Npi.value == '') && submittedone"
-                                class="invalid-feedback d-block">
-                                Npi is Required
-                            </div>
                     </div>
                 </div>
-                </div>
-                <div class="text-center mt-3 ">
-                    <button type="button" class="btn btn-primary ml-2 p-3"
-                        (click)="cancel2()">Reset</button>
-                    <button type="submit" class="btn btn-primary ml-2 p-3"
-                        (click)="firstsubmit()">Submit</button>
-                </div>
-            </form>
-        </div>
+            </div>
+        </section>
+
+
+
+
     </div>
-</section>
+</div>

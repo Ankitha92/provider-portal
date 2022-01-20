@@ -15,12 +15,18 @@
                 <div class="col-lg-12 ">
                     <div class="form-group">
                         <label class="pricemedication_label" for="planYear">Plan Year</label>
-                        <select class="cs-tb" formControlName="planYear" id="planYear" placeholder="Select" [class.invalid]="(firstFormGroup.controls.planYear.touched ) 
+                        <!-- <select class="cs-tb" formControlName="planYear" id="planYear" placeholder="Select" [class.invalid]="(firstFormGroup.controls.planYear.touched ) 
                         && !firstFormGroup.controls.planYear.valid " class=" cs-tb" name="planYear">
                             <option value="" disabled selected hidden>Select</option>
                             <option>2021</option>
                             <option>2022</option>
-                        </select>
+                        </select> -->
+                        <ng-select2 [data]="exampleData1"
+                        name="planYear" formControlName="planYear" placeholder="Select Year"
+                        [(ngModel)]="value1"
+                        [formControl]="formControl1"
+                        >
+            </ng-select2>
                         <div *ngIf="(firstFormGroup.controls.planYear.value == '') && firstFormGroup.controls.planYear.touched "
                         class="invalid-feedback d-block">
                         Plan is Required
@@ -32,13 +38,19 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="pricemedication_label" for="plan">Plan</label>
-                            <select  formControlName="plan" id="plan" placeholder="Select" [class.invalid]="(!firstFormGroup.controls.plan.touched ) 
+                            <!-- <select  formControlName="plan" id="plan" placeholder="Select" [class.invalid]="(!firstFormGroup.controls.plan.touched ) 
                             && firstFormGroup.controls.plan.valid " class=" cs-tb" name="planYear">
                                 <option value="" disabled selected hidden>Select</option>
                                 <option>Clear Spring Health Value RX (PDP) (028) HI</option>
                                 <option>Clear Spring Health Value RX (PDP) (029) AK</option>
                                 <option>Clear Spring Health Primer RX (PDP) (030) NJ</option>
-                            </select>
+                            </select> -->
+                            <ng-select2 [data]="exampleData2"
+                        name="plan" formControlName="plan" placeholder="Select plan"
+                        [(ngModel)]="value2"
+                        [formControl]="formControl2"
+                        >
+            </ng-select2>
                             <div *ngIf="(firstFormGroup.controls.plan.value == '') && firstFormGroup.controls.plan.touched"
                         class="invalid-feedback d-block">
                         Plan is Required
@@ -47,26 +59,27 @@
                     </div>
                 </div>
                 <div class="row">
-                <div class="col-lg-12">
+                <div class="col-12">
                     <div class="form-group">
                         <label class="pricemedication_label" for="specialAssistance">Do you Qualify for Special Assistance?</label>
-                        <select class="cs-tb" formControlName="specialAssistance" id="specialAssistance" placeholder="Select" [class.invalid]="(!firstFormGroup.controls.specialAssistance.touched ) 
-                        && firstFormGroup.controls.specialAssistance.valid" class=" cs-tb" name="planYear">
-                            <option value="" disabled selected hidden>Select</option>
-                            <option>No</option>
-                            <option>Yes</option>
-                            <option>I do not Know</option>
-                        </select>
+                       
+                        <ng-select2 [data]="exampleData3"
+                        name="specialAssistance" formControlName="specialAssistance" placeholder="Select Special Assistance"
+                        [(ngModel)]="value3"
+                        [formControl]="formControl3">
+                        </ng-select2>
                         <div *ngIf="(firstFormGroup.controls.specialAssistance.value == '') && firstFormGroup.controls.specialAssistance.touched"
                         class="invalid-feedback d-block">
                         Special Assistance is Required
                     </div>
                     </div>
+                    <div class="btn-container col-12">
+                        <button type="button" class="btn btn-primary ml-2 p-2" *ngIf='firstFormGroup.valid' [routerLink]="['/viewdetails']">View Details</button>
+                    </div>
+                    <br>
                 </div>
             </div>
-            <div class="btn-container float-right">
-                <button type="button" class="btn btn-primary ml-2 p-2" *ngIf='firstFormGroup.valid' [routerLink]="['/viewdetails']">View Details</button>
-            </div>
+           
         </form>
     </div>
 </div>

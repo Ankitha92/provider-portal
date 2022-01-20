@@ -135,6 +135,28 @@ padding: 4px 8px;
 background-color: #fff;
 }
 .btn-primary{
-  width: 98px;
-  height: 60px;
+  width: 100px;
+  height: 45px;
+}
+
+.radiobutton{
+  height: 15px;
+  margin-top: 0.1rem;
+  left: -15px;
+}
+
+.btn-container{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 0px !important;
+}
+
+@media (min-width: 576px){
+  .col-sm-12 {
+    button{
+      margin-top: 5px;
+    }
+      
+  }
 }

@@ -18,13 +18,13 @@
                     </label>
                 </div>
                 <div class="search-bar">
-                    <input type="text" name="claimid" class="cs-tb" formControlName="claimid" required="true">
+                    <input type="text" name="zipcode" class="cs-tb" formControlName="zipcode" required="true">
                     <button type="button" (click)="firstsubmit()" class="btn btn-primary ml-2 mb-4 p-3">Find Plan and
                         Enroll</button>
                 </div>
                 <div class="place">
                 <div 
-                    *ngIf="(popUp2FormGroup.controls.claimid.value == '') && submittedthree"
+                    *ngIf="(popUp2FormGroup.controls.zipcode.value == '') && submittedthree"
                     class="invalid-feedback d-block">
                     zipcode is Required
                 </div>
@@ -73,7 +73,7 @@
 
                     </div>
                     <a> <button [routerLink]="['/coveragedrug']"
-                            class="btn btn-primary ">Find A Covered Drug</button></a>
+                            class="btn btn-primary mt-0 mb-4 p-2">Find A Covered Drug</button></a>
                     <ul>
                         <li>
                             <h4><i class="fa fa-check" aria-hidden="true"></i> To find documents related to your
@@ -82,7 +82,7 @@
                         </li>
                     </ul>
                     <a> <button [routerLink]="['/plandocument']"
-                            class="btn btn-primary ">Plan Document</button></a>
+                            class="btn btn-primary mt-0 mb-4 p-2">Plan Document</button></a>
                     <div>
                         <br>
                     </div>
@@ -140,7 +140,7 @@
                             </li>
                             <li>
                                 <a> <button [routerLink]="['/plandocument']"
-                                        class="btn btn-primary mt-0 mb-4 p-2">Plan
+                                        class="btn btn-primary  mt-0 mb-4 p-2">Plan
                                         Document</button></a>
                             </li>
                         </ul>

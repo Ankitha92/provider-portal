@@ -10,7 +10,79 @@
 .btn-wd{
     width: 50%;
 }
-.btn-primary{
-    width: 98px;
-    height: 60px;
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding:  1.25rem 0rem  1.25rem 0rem  !important;
 }
+
+
+.btn-primary{
+  width: 98px;
+  height: 53px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-size{
+  width: 90px !important;
+  height: 40px !important;
+  display: flex;
+  margin-top: 3px;
+  justify-content: center;
+}
+
+////claim status
+.search-bar{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: right;
+  }
+  .search-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+    .btn-section{
+      margin-left: 30px;
+      height: 10%;
+    }
+    .mg-t{
+      margin:30px 0px 0px 0px;
+    }
+    .table-header-container{
+      font-size: 13px;
+      padding: 10px 0px 10px 0px;
+    }
+    .center{
+      text-align: center;
+    }
+    input {
+      flex: 0 0 200px;
+      margin-left: 10px;
+    }
+    .search{
+      height: 20px;
+      flex: 0 0 200px;
+      margin-left: 90px;
+    }
+    small{
+      height: 20px;
+      flex: 0 0 200px;
+      margin-left: 10px;  
+    }
+    .column {
+      float: left;
+      width: 30%;
+      padding: 10px;
+      height: 100px; /* Should be removed. Only for demonstration */
+    }
+    .row:after {
+      content: "";
+      display: table;
+      
+    }
+    .pd-top{
+      padding-top:7px;
+    }

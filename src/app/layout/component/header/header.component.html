@@ -6,52 +6,16 @@
             <nav class="mb-0 navbar navbar-expand-lg navbar-light ">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
                     <ul class="navbar-nav mr-auto">
-                        <!-- <li class="nav-item">
-              <a class="nav-link top_header" href="javascript: void(0)"  title="Under construction"><i class="fa fa-cog" aria-hidden="true"></i> Settings
-              </a>
-            </li>  -->
-
-                        <li>
-                            <a href="#" class="nav-link top_header "> <i class="fa fa-cog"></i> Settings</a>
-
-                            <!-- <ul>
-
-                                <li class="top-dropdown-list"><a [routerLink]="['/acoverview']">Account overview</a></li>
-                                <li class="top-dropdown-list"><a href="javascript: void(0)">Who's Covered</a></li>
-                                <li class="top-dropdown-list"><a href="javascript: void(0)">My Address</a></li>
-                                <li class="top-dropdown-list"><a href="javascript: void(0)">Permissions</a></li>
-                                <li class="top-dropdown-list"><a [routerLink]="['/com-pref']">Communication Preferences</a></li>
-                                <li class="top-dropdown-list"><a [routerLink]="['/paperless']">Paperless Options</a></li>
-                                <li class="top-dropdown-list"><a href="javascript: void(0)">Register Eligible Members</a></li>
-                                <li class="top-dropdown-list"><a href="javascript: void(0)">Invite Eligible Members</a></li>
-                            </ul> -->
-
-                        </li>
-
-
-                        <li class="nav-item">
-                            <a class="nav-link top_header" [routerLink]="['/help']"><i class="fa fa-question-circle"
-                                    aria-hidden="true" title="Help"></i> Help</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link top_header" href="javascript: void(0)" title="Under construction"><i
-                                    class="fa fa-bell" aria-hidden="true">
-                                    <span class="notific">0</span>
-                                </i> Notification</a>
-
-                        </li>
-                        <!-- <li class="nav-item" *ngIf=!providerlogin>
-                            <a class="nav-link top_header" [routerLink]="['/providerlogin']"><i class="fa fa-user" aria-hidden="true"  title="Help"></i> ProviderPortal</a>
-                        </li> -->
+                      
                         <li class="nav-item">
                             <!-- <a class="nav-link top_header" href="#"><i class="fa fa-user" aria-hidden="true"></i> John Schwarzennegger</a> -->
                             <a class="nav-link top_header" href="javascript: void(0)" title="Welcome"><i
-                                    class="fa fa-user" aria-hidden="true"></i> {{users.firstname}}
+                                    class="fa fa-user" aria-hidden="true"></i> &nbsp; {{users.firstname}}
                                 {{users.lastname}}</a>
                         </li>
-                        <li class="nav-item" style="cursor:pointer">
+                        <li class="nav-item" style="cursor:pointer" >
                             <a class="nav-link top_header" (click)="logout()" title="Logout"><i
-                                    class="fa fa-power-off hoverme" aria-hidden="true"></i> </a>
+                                    class="fa fa-power-off hoverme" aria-hidden="true"></i>&nbsp; Logout </a>
                         </li>
                     </ul>
                 </div>
@@ -61,42 +25,165 @@
 </div>
 
 <nav class="mt-2 navbar navbar-expand-lg navbar-light sticky-top" style="background-color:#fff">
-    <!-- <a class="navbar-brand" style="width: 30%;" routerLink="home">
-        <h1 style="font-size: revert;
-        padding-left: 20px;"> Provider Portal</h1>
-    </a> -->
-
-    <a class="navbar-brand" style="width:40%;" routerLink="/home"><img src="assets/img/newlogo.png" alt="" style="width:9em;margin-left: 20px;"></a>
-
+    <a class="navbar-brand" style="width:40%;" routerLink="/home"><img src="assets/img/newlogo.png" alt=""
+            style="width:9em;margin-left: 20px;"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
         aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
         <ul class="navbar-nav menu_bar mr-auto">
-            <li class="nav-item">
-
-            </li>
-
-            <li class="nav-item">
-
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['router-link-active']">Home
-                    <span class="sr-only">(current)</span>
+            <li class="nav-item dropdown" *ngFor="let a of menuDetails?.MainMenu">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">{{a.menuName}}
                 </a>
+                <ul class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333" [ngClass]="{'data': a.menuName === 'Other Features','hide':a.menuName === 'Claims'}">
+                    <a class="dropdown-item bg-light" [routerLink]="[b.link]"
+                        [routerLinkActive]="['router-link-active']" *ngFor="let b of a.subMenu">{{b.functionName}}
+                    </a>
+                   
+                </ul>
+            </li>
+            <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">My Patients
+                </a>
+                <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                    <a class="dropdown-item bg-light" [routerLink]="['/eligibilitylookup']"
+                        [routerLinkActive]="['router-link-active']">Member Eligibility
+                        and Benefits
+                    </a>
+                    <a class="dropdown-item" [routerLink]="['/medicationformulatory']"
+                        [routerLinkActive]="['router-link-active']">View Care Plans
+                    </a>
+                    <a class="dropdown-item" [routerLink]="['/home']" [routerLinkActive]="['router-link-active']">View
+                        Care Gaps
+                    </a>
+                    <a class="dropdown-item" [routerLink]="['/home']" [routerLinkActive]="['router-link-active']">Submit
+                        Care Gaps
+                    </a>
+                    <a class="dropdown-item" [routerLink]="['/home']"
+                        [routerLinkActive]="['router-link-active']">Request Member Transfer
+                    </a>
+                    <a class="dropdown-item" [routerLink]="['/home']" [routerLinkActive]="['router-link-active']">View
+                        and Submit
+                        Visit Checklist
+                    </a>
+                </div>
             </li>
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">Claims
+                    aria-haspopup="true" aria-expanded="false">My Practice
                 </a>
                 <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-                    <p class="dropdown-item" (click)="claimSearch()">Claims Search</p>
-                    <a class="dropdown-item" [routerLink]="['/claimstatus']"
-                        [routerLinkActive]="['router-link-active']">Claims
-                        Status</a>
+                    <a class="dropdown-item bg-light" [routerLink]="['/home']"
+                        [routerLinkActive]="['router-link-active']">View Practice Management
+                    </a>
+                    <a class="dropdown-item" [routerLink]="['/home']" [routerLinkActive]="['router-link-active']">Update
+                        Practice Information
+
+                    </a>
+                    <a class="dropdown-item" [routerLink]="['/home']" [routerLinkActive]="['router-link-active']">Manage
+                        Sub-Group
+                        Account Users
+                    </a>
+                    <a class="dropdown-item" [routerLink]="['/home']" [routerLinkActive]="['router-link-active']">Manage
+                        Contract Users
+                    </a>
+                    <a class="dropdown-item" [routerLink]="['/home']" [routerLinkActive]="['router-link-active']">Manage
+                        Medical Groups
+                    </a>
+                    <a class="dropdown-item" [routerLink]="['/home']" [routerLinkActive]="['router-link-active']">Manage
+                        Providers
+                    </a>
+                    <a class="dropdown-item" [routerLink]="['/home']"
+                        [routerLinkActive]="['router-link-active']">Reports
+                    </a>
                 </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Authorizations & Referrals
+                </a>
+                <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                    <a class="dropdown-item bg-light" [routerLink]="['/AuthorizationSts']"
+                        [routerLinkActive]="['router-link-active']">Authorization Status
+                    </a>
+                    <a class="dropdown-item" [routerLink]="['/home']"
+                        [routerLinkActive]="['router-link-active']">Authorization Submission
+                    </a>
+                    <a class="dropdown-item" [routerLink]="['/home']" [routerLinkActive]="['router-link-active']">View
+                        and Submit Referrals
+                    </a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Claims
+                </a>
+                <ul class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333"
+                    style="    left: -100px;">
+                    <a class="dropdown-item bg-light" [routerLink]="['/claims-search']"
+                        [routerLinkActive]="['router-link-active']">Claim Status
+                    </a>
+                    <a class="dropdown-item" [routerLink]="['/home']" [routerLinkActive]="['router-link-active']">Submit
+                        Claims and
+                        Corrected Claims
+                    </a>
+                    <a class="dropdown-item" [routerLink]="['/home']" [routerLinkActive]="['router-link-active']">Submit
+                        Appeals and
+                        Disputes
+                    </a>
+                    <a class="dropdown-item" [routerLink]="['/remittance']"
+                        [routerLinkActive]="['router-link-active']">Remittance Advice
+                    </a>
+                </ul>
+            </li>
+
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Other Features
+                </a>
+                <ul class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333"
+                    style="    left: -260px;">
+                    <a class="dropdown-item bg-light" [routerLink]="['/home']"
+                        [routerLinkActive]="['router-link-active']">Request Affiliation to a Contract or Sub-Group
+                        Account
+                    </a>
+                    <a class="dropdown-item" [routerLink]="['/home']" [routerLinkActive]="['router-link-active']">Search
+                        and Take
+                        Portal Trainings
+                    </a>
+                    <a class="dropdown-item" [routerLink]="['/home']" [routerLinkActive]="['router-link-active']">Secure
+                        Messaging and
+                        Notifications
+                    </a>
+                    <a class="dropdown-item" [routerLink]="['/home']"
+                        [routerLinkActive]="['router-link-active']">Provider Lookup
+                    </a>
+                    <a class="dropdown-item" [routerLink]="['/home']" [routerLinkActive]="['router-link-active']">View
+                        Help
+
+                    </a>
+
+
+                </ul>
+            </li>
+            <li>
+
+            </li> -->
+
+            <!-- <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['router-link-active']">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li> 
+
+             <li class="nav-item ">
+                <a class="nav-link" [routerLink]="['/claims-search']" [routerLinkActive]="['router-link-active']">Claims
+                </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" [routerLink]="['/eligibilitylookup']"
@@ -118,11 +205,8 @@
                 <p class="nav-link" [routerLink]="['/AuthorizationSts']" [routerLinkActive]="['router-link-active']">
                     Authorization status
                 </p>
-            </li>
-            <!-- <li class="nav-item">
-                <p class="nav-link">Plan Policies and Forms
-                </p>
             </li> -->
+
         </ul>
     </div>
 </nav>
