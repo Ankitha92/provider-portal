@@ -45,7 +45,7 @@
   .nav-menu a {
     display: block;
     position: relative;
-    color: #0b6766;
+    color: #276fba;
     padding: 10px 15px;
     transition: 0.3s;
     font-size: 14px;
@@ -53,7 +53,7 @@
   }
   
   .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
-    color: #007E68;
+    color: #276fba;
     text-decoration: none;
   }
   
@@ -100,11 +100,11 @@
     font-size: 14px;
     font-weight: 500;
     text-transform: none;
-    color: #25564f;
+    color: #276fba;
   }
   
   .nav-menu .drop-down ul a:hover, .nav-menu .drop-down ul .active > a, .nav-menu .drop-down ul li:hover > a {
-    color: #70b9b0;
+    color: #276fba;
   }
   
   .nav-menu .drop-down > a:after {
@@ -183,7 +183,7 @@
   
   }
   .nav-link {
-      color: #007E68 !important;
+      color: #276fba !important;
       margin-left: 17px;
       font-size: 14px;
       text-decoration: none;
@@ -208,7 +208,7 @@
       font-size: 14px;
       font-weight: 500;
       text-transform: none;
-      color: #25564f;
+      color: #276fba;
   
   }
   
@@ -254,7 +254,7 @@
     .nav-menu a {
       display: block;
       position: relative;
-      color: #0b6766;
+      color: #276fba;
       padding: 10px 15px;
       transition: 0.3s;
       font-size: 14px;
@@ -262,7 +262,7 @@
     }
     
     .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
-      color: #007E68;
+      color: #276fba;
       text-decoration: none;
     }
     
@@ -356,7 +356,7 @@
       font-size: 14px;
       font-weight: 500;
       text-transform: none;
-      color: #25564f;
+      color: #276fba;
   
     }
   
@@ -371,4 +371,11 @@
       visibility: hidden; */
       content: "\f0d7";
       font: normal normal normal 12px/1 FontAwesome;
+  }
+
+  .data{
+    left: -350px;
+  }
+  .hide{
+    left: -150px;
   }

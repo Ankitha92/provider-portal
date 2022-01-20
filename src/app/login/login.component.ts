@@ -35,11 +35,12 @@ export class LoginComponent {
       // this.authService.login(this.form.value)
       this.http.post('https://provider-portal.azurewebsites.net/api/login', this.form.value)
         .subscribe((response) => {
-          console.log('repsonsei ', this.alldata);
+          console.log('repsonsei ', response);
           this.alldata = response
           let data = this.alldata.token;
           localStorage.setItem('token', data);
           localStorage.setItem('user_value', JSON.stringify(this.alldata.user));
+          localStorage.setItem('menu',JSON.stringify(this.alldata.role_details));
           if (localStorage.getItem('token')) {
             this.router.navigate(['/home'])
           }

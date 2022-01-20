@@ -49,14 +49,18 @@
       
     }
     .pd-top{
-      padding-top:7px;
+      padding-top:14px;
     }
     .place{
       position: absolute;
-      right: 10%;
-      bottom: 35%;
+      right: 15%;
+      bottom: 34%;
     }
     .btn-primary{
-      width: 98px;
-      height: 60px;
+      width: 90px !important;
+      height: 40px !important;
+      display: flex;
+      margin-top: 3px;
+      justify-content: center;
+    
   }

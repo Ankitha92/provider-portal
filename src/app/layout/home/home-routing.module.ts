@@ -9,6 +9,7 @@ import { HomeComponent } from '../home/home.component';
 import { MedicareDPlansComponent } from '../medicare-dplans/medicare-dplans.component';
 import { MedicationformularyComponent } from '../medicationformulary/medicationformulary.component';
 import { PlancomparsionComponent } from '../plancomparsion/plancomparsion.component';
+import { PlandetailsComponent } from '../plandetails/plandetails.component';
 import { PlandocumentComponent } from '../plandocument/plandocument.component';
 import { PlanoptionsComponent } from '../planoptions/planoptions.component';
 import { RemittanceComponent } from '../remittance/remittance.component';
@@ -54,6 +55,10 @@ const routes: Routes = [
   {
     path: "plancomparsion",
     component: PlancomparsionComponent
+  },
+  {
+    path: "plandetails",
+    component: PlandetailsComponent
   },
   {
     path: "planoptions",

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { ApiservicesService } from 'src/app/apiservices.service';
+
 
 @Component({
   selector: 'app-plancomparsion',
@@ -8,22 +11,31 @@ import { FormControl } from '@angular/forms';
 })
 export class PlancomparsionComponent implements OnInit {
   show: boolean = false;
-  currentVal: any;
-  data: number = 4;
-  plan: any = [
-    { "heading": "Clear Spring Health Value Rx (PDP) - Georgia", "premium": "$26.50", "deductable": "$480.00" },
-    { "heading": "Clear Spring Health Premier Rx (PDP) - Georgia", "premium": "$18.20", "deductable": "$480.00" },
-
-  ]
-  constructor() { }
+  plan: any ;
+  datavalue:any;
+  planname: any;
+  zipcode: any;
+  constructor(public activateroute: ActivatedRoute, public api: ApiservicesService) {
+    this.activateroute.params.subscribe(res => {
+      console.log(res);
+      this.planname = res.planname;
+      this.zipcode = res.zipcode;
+      this.plandetails();
+    })
+   }
 
   ngOnInit(): void {
-    zipid: new FormControl('')
+    //zipid: new FormControl('')
   }
-  showCard(val: any) {
-    this.show = true
-    console.log(val);
-    this.currentVal = val;
+  
+  plandetails() {
+    let plandetails = { "plan": this.planname, "zipcode": this.zipcode }
+    this.api.post('plandetails', plandetails).subscribe(res => {
+      this.datavalue=res;
+      console.log(this.datavalue);
+      this.plan = this.datavalue.list;
+      console.log(this.plan);
+    })
   }
 
 }

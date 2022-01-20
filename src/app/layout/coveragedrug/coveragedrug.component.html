@@ -11,50 +11,44 @@
         <br>
     </h4>
     <h1> Search your Coverage Drug</h1>
-    <div class="container" style="height:150px">
+    <div class="container" class="bodyheigh">
         <form [formGroup]="popUp2FormGroup">
             <div class="row">
-                <div class="col-sm-4">
-                    <div class="form-group">
+                <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                    <div class="form-group" >
                         <label class="pricemedication_label" for="sel1">Plan <span
                             class="text-danger">*</span></label>
-                        <select class="cs-tb" formControlName="pharmacy" name="pharmacy" id="sel1" placeholder="Select Plan">
-                            <option value="" disabled selected hidden>Select Plan</option>
-                            <option>Clear Spring Health Value Rx (PDP)</option>
-                            <option>Clear Spring Health Premier Rx (PDP)</option>
-                        </select>
+                        <ng-select2 [data]="exampleData"
+                        [(ngModel)]="value"
+                        name="pharmacy" formControlName="pharmacy" placeholder="Select Plan"
+                        [formControl]="formControl">
+                         </ng-select2>
                         <div *ngIf="(popUp2FormGroup.controls.pharmacy.value == '') && submittedthree"
                         class="invalid-feedback d-block">
                         pharmacy is Required
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
                     <div class="form-group">
                         <label class="pricemedication_label" for="zipcode">State <span
                             class="text-danger">*</span></label>
-                        <select class="cs-tb" formControlName="zipcode" name="zipcode" id="sel1" placeholder="Select State">
-                            <option value="" disabled selected hidden>Select State</option>
-                            <option>Alabama</option>
-                            <option>Alaska</option>
-                            <option>Arizona</option>
-                            <option>Arkansas</option>
-                            <option>California</option>
-                        </select>
+                        <ng-select2 [data]="exampleData2"
+                        name="zipcode" formControlName="zipcode" placeholder="Select State"
+                        [(ngModel)]="value2"
+                        [formControl]="formControl2">
+            </ng-select2>
                         <div *ngIf="(popUp2FormGroup.controls.zipcode.value == '') && submittedthree"
                         class="invalid-feedback d-block">
                         zipcode is Required
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4 mt-4">
-                    <a class="btn btn-primary ml-2 p-3" (click)="firstsubmit()">Search
+                <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 mt-4" >
+                    <a class="btn btn-primary" (click)="firstsubmit()">Search
                     </a>
                 </div>
             </div>
         </form>
-
-
-
     </div>
-</div>
+</div><br> <br><br> <br><br> <br><br> 

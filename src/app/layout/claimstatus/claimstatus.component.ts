@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiservicesService } from 'src/app/apiservices.service';
 
+
 @Component({
   selector: 'app-claimstatus',
   templateUrl: './claimstatus.component.html',
@@ -21,6 +22,7 @@ export class ClaimstatusComponent implements OnInit {
     });
   }
   ngOnInit(): void {
+   
   }
   showTable() {
     this.submittedthree = true;
@@ -46,4 +48,6 @@ export class ClaimstatusComponent implements OnInit {
       })
     }
   }
+
+ 
 }
